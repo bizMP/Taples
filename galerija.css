@@ -96,6 +96,8 @@ nav a {
     position: relative;
     left: 3px;
     top: 22px;
+    text-align: left;
+    max-width: 100%;
 }
 
 /*==SEDEŽNE GARNITURE==*/
