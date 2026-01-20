@@ -10,182 +10,196 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Satisfy&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="taples.css">
-    <script src="taples.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="#">DOMOV</a>
-        <a href="#">PREDSTAVITEV</a>
+    <nav class="scroll-slide-right">
+        <a href="#landingPage">DOMOV</a>
+        <a href="#predstavitev">PREDSTAVITEV</a>
         <div class="logo"><img src="Taples slike/David logo.png" alt="Taples logo"></div>
-        <a href="#">PONUDBA</a>
-        <a href="#" style="margin-right: -300px">KONTAKT</a>
+        <a href="#ponudba">PONUDBA</a>
+        <a href="#kontakt">KONTAKT</a>
 
-        <div id="nextPageLinkDiv">
-            <a href="#" id="nextPageLink">Solna soba <br> TapleSALT</a>
+        <div id="nextPageLinkDiv" onclick="location.href='#'">
+            <p id="nextPageLink">Solna soba <br> TapleSALT</p>
         </div>
     </nav>
 
-    <div class="landingPage">
+    <div class="landingPage" id="landingPage">
         <div class="landingPageHeading">
-            <h1>TAPLES <br> OBLAZINJENO <br> POHIŠTVO</h1>
-            <p>Tapetništvo za tiste, ki cenijo popolnost</p>
+            <h1 class="scroll-fade-in">TAPLES <br> OBLAZINJENO <br> POHIŠTVO</h1>
+            <p class="scroll-fade-in">Tapetništvo za tiste, ki cenijo popolnost</p>
         </div>
 
-        <div class="landingPageImg1">
-            <img src="Taples slike/sedežna1.jpg" alt="Sedežna garnitura">
-        </div>
+        <div class="landingPageImages">
+            <div class="landingPageImg1">
+                <img src="Taples slike/sedežna1.jpg" alt="Sedežna garnitura" class="scroll-slide-left">
+            </div>
 
-        <div class="landingPageImg2">
-            <img src="Taples slike/sedežna2.jpg" alt="Sedežna garnitura">
+            <div class="landingPageImg2">
+                <img src="Taples slike/sedežna2.jpg" alt="Sedežna garnitura" class="scroll-slide-right">
+            </div>
         </div>
     </div>
 
-    <div class="predstavitev">
-        <div class="sectionHeader">
+    <div class="predstavitev" id="predstavitev">
+        <div class="sectionHeader scroll-fade-in">
             <h1>PREDSTAVITEV</h1>
             <img src="Taples slike/heading banner.png" alt="heading underline">
         </div>
 
-        <p id="paragraph1">
-            Lepo pozdravljeni in dobrodošli na spletni strani podjetja <span class="highlight">Taples.</span>
-            Z veseljem vas vabimo, da si vzamete trenutek časa za ogled naše spletne strani, kjer vam na kratko predstavljamo naše delo in storitve. 
-        </p>
+        <div class="predstavitevContent">
+            <div class="paragraphImg scroll-slide-right" class="paragraphImg1">
+                <p id="paragraph1">
+                    Lepo pozdravljeni in dobrodošli na spletni strani podjetja <span class="highlight">Taples.</span>
+                    Z veseljem vas vabimo, da si vzamete trenutek časa za ogled naše spletne strani, kjer vam na kratko predstavljamo naše delo in storitve. 
+                </p>
 
-        <img id="img1" src="Taples slike/david1.jpg" alt="David Hladin">
-        <img id="line1" src="Taples slike/dashed line 1.png" alt="dashed line">
+                <img id="img1" src="Taples slike/david1.jpg" alt="David Hladin">
+            </div>
 
-        <p id="paragraph2">
-            Na podlagi več kot <span class="highlight">10 let izkušenj pri izdelavi stilnega 
-            oblazinjenega pohištva</span> ter samostojnega delovanja od 
-            leta <span class="highlight">2004</span> z jasno vizijo, natančnostjo in občutkom za 
-            detajle ustvarjamo <span class="highlight">sodobno in stilno oblikovano 
-            oblazinjeno pohištvo najvišje kakovosti.</span>
-        </p>
+            <img src="Taples slike/dashed line 1.png" alt="dashed line" id="dashedLine1" class="scroll-fade-in">
 
-        <img id="img2" src="Taples slike/sedežna3.jpg" alt="sedežna garnitura">
-        <img id="line2" src="Taples slike/dashed line 2.png" alt="dashed line">
+            <div class="paragraphImg scroll-slide-left" class="paragraphImg2">
+                <img id="img2" src="Taples slike/sedežna3.jpg" alt="sedežna garnitura">
 
-        <p id="paragraph3">
-            Ukvarjamo se z izdelavo <span class="highlight">unikatnega oblazinjenega 
-            pohištva po meri</span> z obnovo obstoječih kosov, vse v 
-            skladu z vašimi željami, merami in pričakovanji. Na voljo 
-            je bogata izbira <span class="highlight">tkanin, umetnega in pravega usnja, pen, 
-            vzmeti, mehanizmov, ležišč ter drugih kakovostnih 
-            materialov,</span> kar nam omogoča, da najdemo ustrezno 
-            rešitev tudi za najbolj zahtevne projekte.
-        </p>
+                <p id="paragraph2">
+                    Na podlagi več kot <span class="highlight">10 let izkušenj pri izdelavi stilnega 
+                    oblazinjenega pohištva</span> ter samostojnega delovanja od 
+                    leta <span class="highlight">2004</span> z jasno vizijo, natančnostjo in občutkom za 
+                    detajle ustvarjamo <span class="highlight">sodobno in stilno oblikovano 
+                    oblazinjeno pohištvo najvišje kakovosti.</span>
+                </p>
+            </div>
 
-        <img id="img3" src="Taples slike/sedežna4.jpg" alt="sedežna garnitura">
-        <img id="line3" src="Taples slike/dashed line 3.png" alt="sedežna garnitura">
+            <img src="Taples slike/dashed line 2.png" alt="dashed line" id="dashedLine2" class="scroll-fade-in">
+            
+            <div class="paragraphImg scroll-slide-right" class="paragraphImg3">
+                <p id="paragraph3">
+                    Ukvarjamo se z izdelavo <span class="highlight">unikatnega oblazinjenega 
+                    pohištva po meri</span> z obnovo obstoječih kosov, vse v 
+                    skladu z vašimi željami, merami in pričakovanji. Na voljo 
+                    je bogata izbira <span class="highlight">tkanin, umetnega in pravega usnja, pen, 
+                    vzmeti, mehanizmov, ležišč ter drugih kakovostnih 
+                    materialov,</span> kar nam omogoča, da najdemo ustrezno 
+                    rešitev tudi za najbolj zahtevne projekte.
+                </p>
 
-        <p id="paragraph4">
-            Posebno vrednost našemu delu daje zaupanje 
-            strank, ki se k nam z veseljem vračajo.
-            <span class="highlight">Zadovoljstvo naročnika je naše 
-            največje priznanje,</span> zato vsakemu projektu 
-            posvečamo maksimalno pozornost in trud.
-        </p>
+                <img id="img3" src="Taples slike/sedežna4.jpg" alt="sedežna garnitura">
+            </div>
 
-        <p id="specialTxt1">Izdelujemo izključno po naročilu, zato oblazinjenega pohištva nimamo na zalogi.</p>
-        <p id="specialTxt2"><span class="highlight" id="txtExtra">Garancija na kvaliteto izdelave oblazinjenega pohištva do 5 let, ki velja pri običajni domači rabi.  Za gostinske in poslovne prostore z večjo obremenitvijo veljajo posebni garancijski pogoji. Garancija ne velja za normalno obrabo materialov.</span></p>
+            <img src="Taples slike/dashed line 3.png" alt="dashed line" id="dashedLine3" class="scroll-fade-in">
+
+            <div class="paragraphImg scroll-fade-in" class="paragraphImg4">
+                <p id="paragraph4">
+                    Posebno vrednost našemu delu daje zaupanje 
+                    strank, ki se k nam z veseljem vračajo.
+                    <span class="highlight">Zadovoljstvo naročnika je naše 
+                    največje priznanje,</span> zato vsakemu projektu 
+                    posvečamo maksimalno pozornost in trud.
+                </p>
+            </div>
+
+            <p id="specialTxt1">Izdelujemo izključno po naročilu, zato oblazinjenega pohištva nimamo na zalogi.</p>
+            <p id="specialTxt2"><span class="highlight" id="txtExtra">Garancija na kvaliteto izdelave oblazinjenega pohištva do 5 let, ki velja pri običajni domači rabi.  Za gostinske in poslovne prostore z večjo obremenitvijo veljajo posebni garancijski pogoji. Garancija ne velja za normalno obrabo materialov.</span></p>
+        </div>
     </div>
 
-    <div class="ponudba">
-        <div class="sectionHeader">
+    <div class="ponudba" id="ponudba">
+        <div class="sectionHeader scroll-fade-in">
             <h1>PONUDBA</h1>
             <img src="Taples slike/heading banner.png" alt="heading underline">
         </div>
 
         <div class="cardsTop">
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/couch white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p style="margin-bottom: 40px; margin-top: 45px;">SEDEŽNE GARNITURE</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#sedežneGarniture'">Galerija</button>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/recliner white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p>KLOPI, SEPAREJI, STOLI, FOTELJI</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#klopiSeparejiStoliFotelji'">Galerija</button>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/pillow white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p>STILNO OBLAZINJENO POHIŠTVO</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#stilnoOblazinjenoPohištvo'">Galerija</button>
                 </div>
             </div>
         </div>
         <div class="cardsBottom">
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/bed white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p>POSTELJE, VRATA, STENE, NIŠE</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#posteljeSteneVrataNiše'">Galerija</button>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/gift white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p style="margin-bottom: 40px; margin-top: 45px;">DARILNI KOTIČEK</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#darilniKotiček'">Galerija</button>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card scroll-scale">
                 <div class="cardTop">
                     <div class="slikaPonudbe">
                         <img src="Taples slike/car white.png" alt="fotelj">
                     </div>
-                    <button type="button">Povpraševanje</button>
+                    <button type="button" onclick="location.href='#kontakt'">Povpraševanje</button>
                 </div>
                 <div class="cardBottom">
                     <p style="font-size: 20px;">AVTOTAPETNIŠTVO, MOTOSEDEŽI, LETALSTVO,  NAVTIKA</p>
-                    <button type="button">Galerija</button>
+                    <button type="button" onclick="location.href='galerija.html#avtotapetništvo'">Galerija</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="kontakt">
-        <div class="sectionHeader">
+    <div class="kontakt" id="kontakt">
+        <div class="sectionHeader scroll-fade-in">
             <h1>KONTAKT</h1>
             <img src="Taples slike/heading banner.png" alt="heading underline">
         </div>
 
         <div class="kontaktniPodatki">
-            <div>
+            <div class="scroll-slide-right">
                 <h2>OSNOVNI PODATKI</h2>
                 <div class="contactCard" style="margin-bottom: 40px;">
                     <p>TAPLES HLADIN DAVID</p>
@@ -201,7 +215,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="scroll-slide-left">
                 <h2>ZEMLJEVID</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2664.0299738932868!2d15.437341476206848!3d46.282449571099185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47657880ef90646b%3A0x4523918d917f3f89!2sZagaj%20pri%20Ponikvi%2038%2C%203232%20Ponikva!5e1!3m2!1ssl!2ssi!4v1768668629588!5m2!1ssl!2ssi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -211,10 +225,10 @@
     <footer>
         <div class="quickLinks">
             <p>Hitre povezave</p>
-            <a href="#">Domov</a>
-            <a href="#">Predstavitev</a>
-            <a href="#">Ponudba</a>
-            <a href="#">Kontakt</a>
+            <a href="#landingPage">Domov</a>
+            <a href="#predstavitev">Predstavitev</a>
+            <a href="#ponudba">Ponudba</a>
+            <a href="#kontakt">Kontakt</a>
         </div>
 
         <div class="logoSocialMedia">
@@ -223,17 +237,19 @@
             </div>
 
             <div class="socialMedia">
-                <img src="Taples slike/facebook logo.png" alt="Facebook logo">
-                <img src="Taples slike/youtube logo.png" alt="Youtube logo">
+                <a href="https://www.facebook.com/david.hladin"><img src="Taples slike/facebook logo.png" alt="Facebook logo"></a>
+                <a href="https://youtube.com/@davidhladin1718?si=1_EXcbZihmTaqrsu"><img src="Taples slike/youtube logo.png" alt="Youtube logo"></a>
             </div>
         </div>
 
         <div class="contactInfo">
             <p>Stopi v kontakt z mano</p>
-            <a href="#">GSM: 041/763-876</a>
-            <a href="#">TEL: 05 99 40 130</a>
-            <a href="#">EMAIL: taples.dh@gmail.com</a>
+            <a href="tel:+386041763876">GSM: 041/763-876</a>
+            <a href="tel:+386059940130">TEL: 05 99 40 130</a>
+            <a href="mailto:taples.dh@gmail.com">EMAIL: taples.dh@gmail.com</a>
         </div>
     </footer>
+
+    <script src="taples.js"></script>
 </body>
 </html>
