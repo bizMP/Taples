@@ -76,7 +76,7 @@ nav a {
 
 .landingPage {
     overflow: hidden;
-    max-height: 800px;
+    height: fit-content;
 }
 
 .landingPageHeading {
@@ -105,8 +105,8 @@ nav a {
 }
 
 .landingPageImg1 img {
-    height: 700px;
-    width: 700px;
+    height: 500px;
+    width: 500px;
     border: 5px solid white;
     border-radius: 50%;
     margin-left: -20%;
@@ -114,11 +114,12 @@ nav a {
 }
 
 .landingPageImg2 img {
-    height: 1000px;
-    width: 1000px;
+    height: 800px;
+    width: 800px;
     border: 10px solid white;
     border-radius: 50%;
-    margin-top: -30%;
+    margin-left: 15%;
+    margin-top: -70%;
 }
 
 /*==PREDSTAVITEV==*/
@@ -355,11 +356,15 @@ nav a {
 }
 
 .contactCard {
-    background-color: #848484;
+    background-color: white;
     box-shadow: 0px 2px 10px 0px white;
     border-radius: 20px;
     padding: 10px;
     width: 500px;
+}
+
+.contactCard p {
+    color:#EEBA2B;
 }
 
 iframe {

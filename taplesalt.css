@@ -1,0 +1,610 @@
+/*==GLOBAL STYLES==*/
+
+* {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-color: #3AAFD6;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 64px;
+    color: white;
+}
+
+.sectionHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==NAVIGATION==*/
+
+nav {
+    background-color: white;    
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+nav img {
+    height: 100px;
+}
+
+nav a {
+    color: #3AAFD6;
+    text-decoration: none;
+    position: relative;
+    opacity: 75%;
+}
+
+#nextPageLinkDiv {
+    background-color: black;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    transition: transform 0.3s ease;
+}
+
+#nextPageLink {
+    color: #EEBA2B;
+    font-size: 15px;
+    position: relative;
+    left: 3px;
+    top: 22px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 60px;
+    margin-top: -15px;
+}
+
+/*==LANDING PAGE==*/
+
+.landingPage {
+    overflow: hidden;
+    height: fit-content;
+}
+
+.landingPageHeading {
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.sectionHeader {
+    margin-bottom: -250px;
+}
+
+.landingPageHeading h1 {
+    margin-bottom: -10px;
+}
+
+.landingPageHeading p {
+    color: white;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 400px;
+}
+
+.landingPageImages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.landingPageImg1 img {
+    height: 500px;
+    width: 500px;
+    border: 5px solid white;
+    border-radius: 50%;
+    margin-left: -20%;
+    margin-top: 5%;
+}
+
+.landingPageImg2 img {
+    height: 800px;
+    width: 800px;
+    border: 10px solid white;
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-top: -70%;
+}
+
+/*==PREDSTAVITEV==*/
+
+.predstavitev .sectionHeader h1{
+    margin-bottom: -300px;
+}
+
+.predstavitev .sectionHeader img {
+    width: 600px;
+}
+
+.predstavitev #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
+    max-width: 500px;
+    color: white;
+}
+
+.predstavitev img {
+    border-radius: 20px;
+}
+
+.predstavitevContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.predstavitev .paragraphImg {
+    display: flex;
+    margin-bottom: 100px;
+    gap: 300px;
+}
+
+.predstavitev .paragraphImg p {
+    font-size: 20px;
+    text-align:  center;
+}
+
+#paragraph1 {
+    margin-top: 150px;
+}
+
+#paragraph2 {
+    margin-top: 170px;
+    margin-right: 20px;
+}
+
+#paragraph3 {
+    margin-top: 100px;
+}
+
+#img1 {
+    height: 400px;
+    margin-top: 50px;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+#img2 {
+    height: 500px;
+    box-shadow: 0px 2px 10px 0px black;
+    margin-top: 150px;
+    margin-bottom: -50px;
+}
+
+#img3 {
+    height: 400px;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+#dashedLine1 {
+    z-index: 99;
+    margin: -200px;
+    margin-top: -280px;
+    margin-left: -380px;
+    margin-bottom: -300px;
+    transform: rotate(25deg);
+    height: 550px;
+}
+
+#dashedLine2 {
+    z-index: 99;
+    margin: -200px;
+    margin-top: -350px;
+    margin-left: -50px;
+}
+
+/*==POZITIVNI UČINKI==*/
+
+.pozitivniUčinki .sectionHeader h1{
+    margin-bottom: -350px;
+}
+
+.pozitivniUčinki .sectionHeader img {
+    width: 700px;
+}
+
+.pozitivniUčinki #paragraph1PU, #paragraph2PU, #paragraph3PU, #paragraph4PU {
+    max-width: 500px;
+    color: white;
+}
+
+.pozitivniUčinki img {
+    border-radius: 20px;
+}
+
+.pozitivniUčinkiContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraphImg {
+    display: flex;
+    margin-bottom: 100px;
+    gap: 300px;
+}
+
+.paragraphImg p {
+    font-size: 20px;
+    text-align:  left;
+}
+
+.pozitivniUčinki .paragraphHeading {
+    font-size: 30px;
+}
+
+#paragraph1PU {
+    margin-top: 150px;
+    margin-left: 100px;
+}
+
+#paragraph2PU {
+    margin-top: 150px;
+}
+
+#paragraph3PU {
+    margin-top: 100px;
+}
+
+#paragraph4PU {
+    margin-left: 700px;
+    margin-top: -0px;
+}
+
+#img1PU {
+    height: 400px;
+    margin-top: 50px;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+#img2PU {
+    height: 500px;
+    box-shadow: 0px 2px 10px 0px black;
+    margin-top: 150px;
+    margin-bottom: -50px;
+}
+
+#img3PU {
+    height: 400px;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+#dashedLine1PU {
+    z-index: 99;
+    margin: -200px;
+    margin-top: -220px;
+    margin-left: -360px;
+    margin-bottom: -300px;
+    transform: rotate(25deg);
+    height: 500px;
+}
+
+#dashedLine2PU {
+    z-index: 99;
+    margin: -200px;
+    margin-top: -310px;
+    margin-left: -50px;
+}
+
+#dashedLine3PU {
+    z-index: 99;
+    margin: -200px;
+    margin-left: -550px;
+    margin-top: -250px;
+    transform: rotate(80deg);
+}
+
+#specialTxt1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: -5px;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 80%;
+    text-align: center;
+}
+
+#specialTxt2 {
+    text-align: center;
+    max-width: 60%;
+}
+
+/*==PRICELIST==*/
+
+.cenik .sectionHeader h1{
+    margin-bottom: -200px;
+}
+
+.cenik .sectionHeader img {
+    width: 400px;
+}
+
+.divForCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricelistBox {
+    margin-top: 100px;
+    border: 3px solid white;
+    width: 70%;
+    border-radius: 20px;
+    background-color: white;
+    padding-bottom: 20px;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+.pricelistHeader {
+    background-color: #3AAFD6;
+    padding: 20px;
+    width: 96%;
+    border: 3px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pricelistHeader a {
+    color: white;
+    text-decoration: none;
+}
+
+.pricelist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #3AAFD6;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.pricelist table {
+    border-collapse: collapse;
+}
+
+.pricelist table th, td {
+    border-right: 2px solid #3AAFD6;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.pricelist table th {
+    border-bottom: 2px solid #3AAFD6;
+}
+
+.lastCell {
+    border-right: none;
+}
+
+/*==AKTUALNE AKCIJE==*/
+
+.aktualneAkcije .sectionHeader h1{
+    margin-bottom: -340px;
+    margin-top: 100px;
+}
+
+.aktualneAkcije .sectionHeader img {
+    width: 700px;
+}
+
+.aktualneAkcije {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.demoDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    color:#3AAFD6 ;
+    box-shadow: 0px 2px 10px 0px black;
+}
+
+/*==KONTAKT==*/
+
+.kontakt {
+    margin-top: 50px;
+}
+
+.kontakt .sectionHeader img {
+    height: 400px;
+    margin-top: -240px;
+    margin-bottom: 100px;
+}
+
+.kontakt h2 {
+    color: white;
+}
+
+.kontakt p {
+    font-size: 20px;
+}
+
+.kontakt h2 {
+    font-size: 30px;
+}
+
+.kontaktniPodatki {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: -10%;
+}
+
+.contactCard {
+    background-color: white;
+    box-shadow: 0px 2px 10px 0px black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 500px;
+}
+
+.contactCard p {
+    color:#3AAFD6;
+}
+
+iframe {
+    box-shadow: 0px 2px 10px 0px black;
+    border-radius: 20px;
+}
+
+/*==FOOTER==*/
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #3AAFD6;
+    text-decoration: none;
+    position: relative;
+    opacity: 75%;
+}
+
+footer p {
+    color: #3AAFD6;
+}
+
+.quickLinks, .logoSocialMedia, .contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .logo img {
+    height: 100px;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 60px;
+}
+
+.socialMedia img {
+    height: 30px;
+}
+
+/*==ANIMATIONS==*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a:hover, footer a:hover {
+    color: #3AAFD6;
+    opacity: 100%;
+    transform: scale(1.1);
+}
+
+#nextPageLinkDiv:hover {
+    transform: scale(1.3);
+}
+
+nav a::after, .quickLinks a::after, .contactInfo a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after {
+    transform: scaleX(1);   
+}
+
+.socialMedia a:hover {
+    transform: scale(1.3);
+}
+
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+img:hover {
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
