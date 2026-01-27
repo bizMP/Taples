@@ -10,6 +10,10 @@
 body {
     margin: 0;
     background-color: #1E1E1E;
+    background-image: url("Taples slike/background.png");
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-position: top left;
     overflow-x: hidden;
 }
 
@@ -97,11 +101,13 @@ nav a {
     font-family: "Satisfy", cursive;
     font-weight: 400;
     font-style: normal;
+    font-size: 25px;
 }
 
 .landingPageImages {
     display: flex;
     justify-content: space-between;
+    filter: grayscale(100%);
 }
 
 .landingPageImg1 img {
@@ -335,12 +341,13 @@ nav a {
     margin-bottom: 100px;
 }
 
-.kontakt h2, p {
+.kontakt h2 {
     color: white;
 }
 
 .kontakt p {
     font-size: 20px;
+    color: #EEBA2B;
 }
 
 .kontakt h2 {
@@ -352,14 +359,13 @@ nav a {
     justify-content: center;
     align-items: center;
     gap: 100px;
-    margin-top: -10%;
 }
 
 .contactCard {
     background-color: white;
     box-shadow: 0px 2px 10px 0px white;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
     width: 500px;
 }
 
@@ -367,9 +373,69 @@ nav a {
     color:#EEBA2B;
 }
 
+.contactCard a {
+    color: #EEBA2B;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+}
+
 iframe {
     box-shadow: 0px 2px 10px 0px white;
     border-radius: 20px;
+}
+
+/*==FOOTER IMAGES==*/
+
+.footerImgs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.footerImgs img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+#footerimg2, #footerimg3, #footerimg4, #footerimg5, #footerimg6 {
+    margin-left: -100px;
+    margin-bottom: -200px;
+}
+
+#footerimg1 {
+    z-index: -5;
+    margin-bottom: -100px;
+    margin-left: -50px;
+}
+
+#footerimg2 {
+    z-index: -4;
+    margin-bottom: -250px;
+}
+
+#footerimg3 {
+    z-index: -3;
+    margin-bottom: -150px;
+}
+
+#footerimg4 {
+    z-index: -2;
+    margin-bottom: -250px;
+}
+
+#footerimg5 {
+    z-index: -1;
+    margin-bottom: -100px;
+}
+
+#footerimg6 {
+    z-index: -1;
+    margin-bottom: -200px;
 }
 
 /*==FOOTER==*/
@@ -378,25 +444,64 @@ footer {
     display: flex;
     justify-content: space-around;
     background-color: black;
-    padding: 20px;
+    padding: 40px;
+    padding-top: 20px;
     margin-top: 40px;
+    z-index: 0;
 }
 
-footer a {
+footer a, p {
     color: #848484;
     text-decoration: none;
-    position: relative;
+    margin-bottom: 10px;
 }
 
-.quickLinks, .logoSocialMedia, .contactInfo {
+footer p {
+    color: #848484;
+    margin-bottom: -10px;
+}
+
+footer h1 {
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: -10px;
+}
+
+.vizitka, .sedežPodjetja, .delovniČas, .contactInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.contactInfo h1 {
+    margin-bottom: 5px;
+}
+
+.vizitka {
+    margin-top: 10px;
+}
+
+.sedežPodjetja {
+    margin-bottom: 10px;
+}
+
+.delovniČas {
+    margin-bottom: 40px;
+}
+
+.contactInfo {
+    margin-top: 10px;
+}
+
 footer .logo img {
     height: 100px;
+}
+
+.logoSocialMedia .logo {
+    margin-left: 10px;
 }
 
 .socialMedia {
@@ -423,7 +528,7 @@ nav a:hover, footer a:hover {
     transform: scale(1.3);
 }
 
-nav a::after, .quickLinks a::after, .contactInfo a::after {
+nav a::after, .quickLinks a::after, .contactInfo a::after, .contactCard a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -437,7 +542,7 @@ nav a::after, .quickLinks a::after, .contactInfo a::after {
     transition: transform 0.3s ease;
 }
 
-nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after {
+nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after, .contactCard a:hover::after {
     transform: scaleX(1);   
 }
 
@@ -497,4 +602,793 @@ nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after {
 img:hover {
     transition: transform 0.5s ease;
     transform: scale(1.05);
+}
+
+/*==RESPONSIVE MEDIA QUERIES==*/
+
+/* Extra Large Desktops (1920px and above) */
+@media screen and (min-width: 1920px) {
+    .landingPageHeading h1 {
+        font-size: 80px;
+    }
+    
+    .landingPageImg1 img {
+        height: 600px;
+        width: 600px;
+    }
+    
+    .landingPageImg2 img {
+        height: 950px;
+        width: 950px;
+    }
+    
+    .paragraphImg {
+        gap: 400px;
+    }
+}
+
+/* Large Desktops (1440px - 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1440px) {
+    .landingPageHeading h1 {
+        font-size: 70px;
+    }
+    
+    .landingPageImg2 img {
+        height: 750px;
+        width: 750px;
+    }
+}
+
+/* Standard Desktops (1200px - 1439px) */
+@media screen and (max-width: 1439px) and (min-width: 1200px) {
+    .landingPageHeading h1 {
+        font-size: 60px;
+    }
+    
+    .landingPageImg1 img {
+        height: 450px;
+        width: 450px;
+    }
+    
+    .landingPageImg2 img {
+        height: 700px;
+        width: 700px;
+    }
+    
+    .paragraphImg {
+        gap: 200px;
+    }
+    
+    #paragraph4 {
+        margin-left: 500px;
+    }
+}
+
+/* Small Desktops & Laptops (992px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    h1 {
+        font-size: 56px;
+    }
+    
+    .landingPageHeading {
+        margin-left: 10%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 52px;
+    }
+    
+    .landingPageImg1 img {
+        height: 400px;
+        width: 400px;
+    }
+    
+    .landingPageImg2 img {
+        height: 600px;
+        width: 600px;
+        margin-top: -60%;
+    }
+    
+    .paragraphImg {
+        gap: 150px;
+    }
+    
+    .paragraphImg p {
+        font-size: 22px;
+        max-width: 400px;
+    }
+    
+    #img1 {
+        height: 350px;
+    }
+    
+    #img2 {
+        height: 450px;
+    }
+    
+    #img3 {
+        height: 350px;
+    }
+    
+    #paragraph4 {
+        margin-left: 400px;
+    }
+    
+    .cardsTop, .cardsBottom {
+        gap: 60px;
+    }
+    
+    .contactCard {
+        width: 400px;
+    }
+    
+    iframe {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+/* Tablets Landscape (768px - 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 14px;
+    }
+    
+    #nextPageLinkDiv {
+        position: relative;
+        right: 0;
+        top: 0;
+        height: 60px;
+        width: 60px;
+    }
+    
+    #nextPageLink {
+        font-size: 9px;
+        left: 2px;
+        top: 18px;
+    }
+    
+    .landingPageHeading {
+        margin-left: 8%;
+        margin-top: 15%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 44px;
+    }
+    
+    .landingPageHeading p {
+        font-size: 20px;
+    }
+    
+    .landingPageImg1 img {
+        height: 300px;
+        width: 300px;
+        margin-left: -15%;
+    }
+    
+    .landingPageImg2 img {
+        height: 450px;
+        width: 450px;
+        margin-top: -50%;
+    }
+    
+    .przedstawitev .sectionHeader img {
+        width: 500px;
+    }
+    
+    .paragraphImg {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    
+    .paragraphImg p {
+        font-size: 20px;
+        max-width: 90%;
+        margin-top: 0;
+    }
+    
+    #paragraph1, #paragraph2, #paragraph3 {
+        margin-top: 0;
+    }
+    
+    #paragraph4 {
+        margin-left: 0;
+        max-width: 90%;
+    }
+    
+    #img1, #img2, #img3 {
+        height: 300px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    #dashedLine1, #dashedLine2, #dashedLine3 {
+        display: none;
+    }
+    
+    #specialTxt1 {
+        font-size: 24px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    #specialTxt2 {
+        max-width: 80%;
+        font-size: 16px;
+    }
+    
+    .ponudba .sectionHeader img {
+        height: 350px;
+        width: 350px;
+    }
+    
+    .cardsTop, .cardsBottom {
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .card {
+        width: 280px;
+    }
+    
+    .kontaktniPodatki {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .contactCard {
+        width: 80%;
+        max-width: 500px;
+    }
+    
+    iframe {
+        width: 90%;
+        max-width: 700px;
+        height: 400px;
+    }
+    
+    .footerImgs {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footerImgs img {
+        height: 200px;
+        width: 200px;
+        margin: 0 !important;
+    }
+    
+    footer {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    footer h1 {
+        font-size: 18px;
+    }
+}
+
+/* Tablets Portrait & Large Phones (576px - 767px) */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    nav .logo img {
+        height: 80px;
+    }
+    
+    #nextPageLinkDiv {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+    }
+    
+    .landingPageHeading {
+        margin-left: 5%;
+        margin-top: 20%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 36px;
+    }
+    
+    .landingPageHeading p {
+        font-size: 18px;
+    }
+    
+    .landingPageImages {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .landingPageImg1 img {
+        height: 280px;
+        width: 280px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    .landingPageImg2 img {
+        height: 350px;
+        width: 350px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    
+    .sectionHeader h1 {
+        margin-bottom: -150px !important;
+    }
+    
+    .predstavitev .sectionHeader img {
+        width: 400px;
+    }
+    
+    .paragraphImg {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    
+    .paragraphImg p {
+        font-size: 18px;
+        max-width: 90%;
+        padding: 0 15px;
+    }
+    
+    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #img1, #img2, #img3 {
+        height: 280px;
+        width: 100%;
+        max-width: 400px;
+        object-fit: cover;
+        margin: 0;
+    }
+    
+    #dashedLine1, #dashedLine2, #dashedLine3 {
+        display: none;
+    }
+    
+    #specialTxt1 {
+        font-size: 20px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    #specialTxt2 {
+        max-width: 90%;
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    .ponudba .sectionHeader img {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .cardsTop, .cardsBottom {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .card p {
+        font-size: 22px;
+    }
+    
+    .kontakt .sectionHeader img {
+        height: 300px;
+    }
+    
+    .kontaktniPodatki {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 15px;
+    }
+    
+    .contactCard {
+        width: 90%;
+    }
+    
+    iframe {
+        width: 90%;
+        height: 350px;
+    }
+    
+    .footerImgs {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .footerImgs img {
+        height: 180px;
+        width: 180px;
+        margin: 0 !important;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    footer h1 {
+        font-size: 16px;
+    }
+    
+    .logoSocialMedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .socialMedia {
+        gap: 40px;
+    }
+}
+
+/* Mobile Devices (up to 575px) */
+@media screen and (max-width: 575px) {
+    h1 {
+        font-size: 32px;
+    }
+    
+    body {
+        width: 100%;
+    }
+    
+    nav {
+        gap: 8px;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    nav .logo img {
+        height: 70px;
+    }
+    
+    #nextPageLinkDiv {
+        position: relative;
+        right: -20px;
+        top: -20px;
+        height: 55px;
+        width: 55px;
+        margin-top: 8px;
+    }
+    
+    #nextPageLink {
+        font-size: 8px;
+        left: 1px;
+        top: 16px;
+    }
+    
+    .landingPageHeading {
+        margin-left: 5%;
+        margin-top: 25%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    
+    .landingPageHeading p {
+        font-size: 12px;
+    }
+
+    
+    .landingPageImg1 img {
+        height: 220px;
+        width: 220px;
+        border: 3px solid white;
+        margin-left: -50px;
+    }
+    
+    .landingPageImg2 img {
+        height: 280px;
+        width: 280px;
+        margin-bottom: 100px;
+        border: 6px solid white;
+    }
+    
+    .sectionHeader h1 {
+        margin-bottom: -140px !important;
+    }
+    
+    .predstavitev .sectionHeader img {
+        width: 300px;
+        margin-bottom: 150px;
+    }
+    
+    .paragraphImg {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    
+    .paragraphImg p {
+        font-size: 16px;
+        max-width: 95%;
+        padding: 0 10px;
+        line-height: 1.6;
+    }
+    
+    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #img1, #img2, #img3 {
+        height: 220px;
+        width: 90%;
+        max-width: 300px;
+        object-fit: cover;
+        margin: 0;
+    }
+    
+    #dashedLine1, #dashedLine2, #dashedLine3 {
+        display: none;
+    }
+    
+    #specialTxt1 {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 15px;
+        line-height: 1.4;
+    }
+    
+    #specialTxt2 {
+        max-width: 95%;
+        font-size: 13px;
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+    
+    #txtExtra {
+        display: block;
+    }
+    
+    .ponudba {
+        margin-top: 30px;
+    }
+    
+    .ponudba h1 {
+        margin-bottom: -120px;
+    }
+
+    .ponudba .sectionHeader img {
+        height: 250px;
+        width: 250px;
+        margin-top: 20px;
+        margin-bottom: 150px;
+    }
+    
+    .cardsTop, .cardsBottom {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        margin-top: 3%;
+    }
+    
+    .card {
+        width: 85%;
+        max-width: 300px;
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .card p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .card button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .cardTop {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cardTop button {
+        margin-right: 0;
+    }
+    
+    .cardBottom button {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .kontakt {
+        margin-top: 450px;
+    }
+
+    .kontakt .sectionHeader h1 {
+        margin-top: -500px;
+    }
+    
+    .kontakt .sectionHeader img {
+        height: 250px;
+        margin-top: 20px;
+        margin-bottom: -50px;
+    }
+    
+    .kontakt h2 {
+        font-size: 24px;
+    }
+    
+    .kontakt p, .kontakt a {
+        font-size: 16px;
+    }
+    
+    .kontaktniPodatki {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 10px;
+    }
+    
+    .contactCard {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    iframe {
+        width: 90%;
+        height: 300px;
+    }
+    
+    .footerImgs {
+        visibility: hidden;
+    }
+    
+    .footerImgs img {
+        height: 0px;
+        width: 0px;
+        margin: 0 !important;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 15px;
+    }
+    
+    footer h1 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    footer p, footer a {
+        font-size: 14px;
+    }
+    
+    footer .logo img {
+        height: 80px;
+    }
+    
+    .logoSocialMedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logoSocialMedia .logo {
+        margin-left: 0;
+    }
+    
+    .socialMedia {
+        gap: 30px;
+    }
+    
+    .socialMedia img {
+        height: 25px;
+    }
+}
+
+/* Extra Small Mobile (up to 375px) */
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    body {
+        width: 100%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 24px;
+    }
+    
+    .landingPageHeading p {
+        font-size: 14px;
+    }
+    
+    .landingPageImg1 img {
+        height: 180px;
+        width: 180px;
+    }
+    
+    .landingPageImg2 img {
+        height: 240px;
+        width: 240px;
+    }
+    
+    .paragraphImg p {
+        font-size: 14px;
+    }
+    
+    #img1, #img2, #img3 {
+        height: 180px;
+    }
+    
+    #specialTxt1 {
+        font-size: 16px;
+    }
+    
+    #specialTxt2 {
+        font-size: 12px;
+    }
+    
+    .card p {
+        font-size: 16px;
+    }
+    
+    .kontakt h2 {
+        font-size: 20px;
+    }
+    
+    iframe {
+        height: 250px;
+    }
+    
+    .footerImgs img {
+        height: 120px;
+        width: 120px;
+    }
 }
