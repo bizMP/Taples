@@ -625,6 +625,11 @@ img:hover {
     .paragraphImg {
         gap: 400px;
     }
+
+    .footerImgs img {
+        height: 400px;
+        width: 400px;
+    }
 }
 
 /* Large Desktops (1440px - 1919px) */
@@ -639,39 +644,22 @@ img:hover {
     }
 }
 
-/* Standard Desktops (1200px - 1439px) */
-@media screen and (max-width: 1439px) and (min-width: 1200px) {
-    .landingPageHeading h1 {
-        font-size: 60px;
-    }
-    
-    .landingPageImg1 img {
-        height: 450px;
-        width: 450px;
-    }
-    
-    .landingPageImg2 img {
-        height: 700px;
-        width: 700px;
-    }
-    
-    .paragraphImg {
-        gap: 200px;
-    }
-    
-    #paragraph4 {
-        margin-left: 500px;
-    }
-}
-
 /* Small Desktops & Laptops (992px - 1199px) */
 @media screen and (max-width: 1199px) and (min-width: 992px) {
     h1 {
         font-size: 56px;
     }
+
+    body {
+        width: 100%;
+    }
+
+    .landingPage {
+        width: 130%;
+    }
     
     .landingPageHeading {
-        margin-left: 10%;
+        margin-left: 20%;
     }
     
     .landingPageHeading h1 {
@@ -687,39 +675,27 @@ img:hover {
         height: 600px;
         width: 600px;
         margin-top: -60%;
+        margin-left: 20%;
     }
-    
-    .paragraphImg {
-        gap: 150px;
+
+    .predstavitev {
+        margin-left: 30%;
     }
-    
-    .paragraphImg p {
-        font-size: 22px;
-        max-width: 400px;
+
+    .predstavitev p {
+        width: 500px;
     }
-    
-    #img1 {
-        height: 350px;
-    }
-    
-    #img2 {
-        height: 450px;
-    }
-    
-    #img3 {
-        height: 350px;
-    }
-    
-    #paragraph4 {
-        margin-left: 400px;
-    }
-    
+
     .cardsTop, .cardsBottom {
         gap: 60px;
     }
     
     .contactCard {
         width: 400px;
+    }
+
+    footer {
+        width: 120%;
     }
     
     iframe {
@@ -728,345 +704,9 @@ img:hover {
     }
 }
 
-/* Tablets Landscape (768px - 991px) */
-@media screen and (max-width: 991px) and (min-width: 768px) {
-    h1 {
-        font-size: 48px;
-    }
-    
-    nav {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 15px 10px;
-        gap: 15px;
-    }
-    
-    nav a {
-        font-size: 14px;
-    }
-    
-    #nextPageLinkDiv {
-        position: relative;
-        right: 0;
-        top: 0;
-        height: 60px;
-        width: 60px;
-    }
-    
-    #nextPageLink {
-        font-size: 9px;
-        left: 2px;
-        top: 18px;
-    }
-    
-    .landingPageHeading {
-        margin-left: 8%;
-        margin-top: 15%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 44px;
-    }
-    
-    .landingPageHeading p {
-        font-size: 20px;
-    }
-    
-    .landingPageImg1 img {
-        height: 300px;
-        width: 300px;
-        margin-left: -15%;
-    }
-    
-    .landingPageImg2 img {
-        height: 450px;
-        width: 450px;
-        margin-top: -50%;
-    }
-    
-    .przedstawitev .sectionHeader img {
-        width: 500px;
-    }
-    
-    .paragraphImg {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-        margin-bottom: 80px;
-    }
-    
-    .paragraphImg p {
-        font-size: 20px;
-        max-width: 90%;
-        margin-top: 0;
-    }
-    
-    #paragraph1, #paragraph2, #paragraph3 {
-        margin-top: 0;
-    }
-    
-    #paragraph4 {
-        margin-left: 0;
-        max-width: 90%;
-    }
-    
-    #img1, #img2, #img3 {
-        height: 300px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    
-    #dashedLine1, #dashedLine2, #dashedLine3 {
-        display: none;
-    }
-    
-    #specialTxt1 {
-        font-size: 24px;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    #specialTxt2 {
-        max-width: 80%;
-        font-size: 16px;
-    }
-    
-    .ponudba .sectionHeader img {
-        height: 350px;
-        width: 350px;
-    }
-    
-    .cardsTop, .cardsBottom {
-        flex-wrap: wrap;
-        gap: 40px;
-        padding: 0 20px;
-    }
-    
-    .card {
-        width: 280px;
-    }
-    
-    .kontaktniPodatki {
-        flex-direction: column;
-        gap: 50px;
-    }
-    
-    .contactCard {
-        width: 80%;
-        max-width: 500px;
-    }
-    
-    iframe {
-        width: 90%;
-        max-width: 700px;
-        height: 400px;
-    }
-    
-    .footerImgs {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .footerImgs img {
-        height: 200px;
-        width: 200px;
-        margin: 0 !important;
-    }
-    
-    footer {
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-    }
-    
-    footer h1 {
-        font-size: 18px;
-    }
-}
-
-/* Tablets Portrait & Large Phones (576px - 767px) */
-@media screen and (max-width: 767px) and (min-width: 576px) {
-    h1 {
-        font-size: 40px;
-    }
-    
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-        gap: 10px;
-    }
-    
-    nav .logo img {
-        height: 80px;
-    }
-    
-    #nextPageLinkDiv {
-        position: relative;
-        right: 0;
-        top: 0;
-        margin-top: 10px;
-    }
-    
-    .landingPageHeading {
-        margin-left: 5%;
-        margin-top: 20%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 36px;
-    }
-    
-    .landingPageHeading p {
-        font-size: 18px;
-    }
-    
-    .landingPageImages {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    
-    .landingPageImg1 img {
-        height: 280px;
-        width: 280px;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-    
-    .landingPageImg2 img {
-        height: 350px;
-        width: 350px;
-        margin-left: 0;
-        margin-top: 0;
-    }
-    
-    .sectionHeader h1 {
-        margin-bottom: -150px !important;
-    }
-    
-    .predstavitev .sectionHeader img {
-        width: 400px;
-    }
-    
-    .paragraphImg {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-    
-    .paragraphImg p {
-        font-size: 18px;
-        max-width: 90%;
-        padding: 0 15px;
-    }
-    
-    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
-        margin-top: 0;
-        margin-left: 0;
-    }
-    
-    #img1, #img2, #img3 {
-        height: 280px;
-        width: 100%;
-        max-width: 400px;
-        object-fit: cover;
-        margin: 0;
-    }
-    
-    #dashedLine1, #dashedLine2, #dashedLine3 {
-        display: none;
-    }
-    
-    #specialTxt1 {
-        font-size: 20px;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    #specialTxt2 {
-        max-width: 90%;
-        font-size: 14px;
-        padding: 0 15px;
-    }
-    
-    .ponudba .sectionHeader img {
-        height: 300px;
-        width: 300px;
-    }
-    
-    .cardsTop, .cardsBottom {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
-    
-    .card {
-        width: 90%;
-        max-width: 350px;
-    }
-    
-    .card p {
-        font-size: 22px;
-    }
-    
-    .kontakt .sectionHeader img {
-        height: 300px;
-    }
-    
-    .kontaktniPodatki {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0 15px;
-    }
-    
-    .contactCard {
-        width: 90%;
-    }
-    
-    iframe {
-        width: 90%;
-        height: 350px;
-    }
-    
-    .footerImgs {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .footerImgs img {
-        height: 180px;
-        width: 180px;
-        margin: 0 !important;
-    }
-    
-    footer {
-        flex-direction: column;
-        gap: 25px;
-        text-align: center;
-    }
-    
-    footer h1 {
-        font-size: 16px;
-    }
-    
-    .logoSocialMedia {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .socialMedia {
-        gap: 40px;
-    }
-}
 
 /* Mobile Devices (up to 575px) */
-@media screen and (max-width: 575px) {
+@media (max-width: 575px) {
     h1 {
         font-size: 32px;
     }
@@ -1077,6 +717,10 @@ img:hover {
     
     nav {
         gap: 8px;
+        flex-direction: column;
+        height: 200px;
+        position: absolute;
+        padding-bottom: -100px;
     }
     
     nav a {
@@ -1089,8 +733,8 @@ img:hover {
     
     #nextPageLinkDiv {
         position: relative;
-        right: -20px;
-        top: -20px;
+        right: -45%;
+        top: -200px;
         height: 55px;
         width: 55px;
         margin-top: 8px;
@@ -1099,12 +743,12 @@ img:hover {
     #nextPageLink {
         font-size: 8px;
         left: 1px;
-        top: 16px;
+        top: 5px;
     }
     
     .landingPageHeading {
         margin-left: 5%;
-        margin-top: 25%;
+        margin-top: 55%;
     }
     
     .landingPageHeading h1 {
@@ -1328,67 +972,5 @@ img:hover {
     
     .socialMedia img {
         height: 25px;
-    }
-}
-
-/* Extra Small Mobile (up to 375px) */
-@media screen and (max-width: 375px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    body {
-        width: 100%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 24px;
-    }
-    
-    .landingPageHeading p {
-        font-size: 14px;
-    }
-    
-    .landingPageImg1 img {
-        height: 180px;
-        width: 180px;
-    }
-    
-    .landingPageImg2 img {
-        height: 240px;
-        width: 240px;
-    }
-    
-    .paragraphImg p {
-        font-size: 14px;
-    }
-    
-    #img1, #img2, #img3 {
-        height: 180px;
-    }
-    
-    #specialTxt1 {
-        font-size: 16px;
-    }
-    
-    #specialTxt2 {
-        font-size: 12px;
-    }
-    
-    .card p {
-        font-size: 16px;
-    }
-    
-    .kontakt h2 {
-        font-size: 20px;
-    }
-    
-    iframe {
-        height: 250px;
-    }
-    
-    .footerImgs img {
-        height: 120px;
-        width: 120px;
     }
 }
