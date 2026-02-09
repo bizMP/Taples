@@ -700,3 +700,382 @@ img:hover {
     transition: transform 0.5s ease;
     transform: scale(1.05);
 }
+
+/*==RESPONSIVE MEDIA QUERIES==*/
+
+/* Extra Large Desktops (1920px and above) */
+@media screen and (min-width: 1920px) {
+    .landingPageHeading h1 {
+        font-size: 80px;
+    }
+    
+    .landingPageImg1 img {
+        height: 600px;
+        width: 600px;
+    }
+    
+    .landingPageImg2 img {
+        height: 950px;
+        width: 950px;
+    }
+    
+    .paragraphImg {
+        gap: 400px;
+    }
+
+    .footerImgs img {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+/* Large Desktops (1440px - 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1440px) {
+    .landingPageHeading h1 {
+        font-size: 70px;
+    }
+    
+    .landingPageImg2 img {
+        height: 750px;
+        width: 750px;
+    }
+}
+
+/* Small Desktops & Laptops (992px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    h1 {
+        font-size: 56px;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .landingPage {
+        width: 130%;
+    }
+    
+    .landingPageHeading {
+        margin-left: 20%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 52px;
+    }
+    
+    .landingPageImg1 img {
+        height: 400px;
+        width: 400px;
+    }
+    
+    .landingPageImg2 img {
+        height: 600px;
+        width: 600px;
+        margin-top: -60%;
+        margin-left: 20%;
+    }
+
+    .predstavitev {
+        margin-left: 30%;
+    }
+
+    .predstavitev p {
+        width: 500px;
+    }
+
+    .cardsTop, .cardsBottom {
+        gap: 60px;
+    }
+    
+    .contactCard {
+        width: 400px;
+    }
+
+    footer {
+        width: 120%;
+    }
+    
+    iframe {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+
+/* Mobile Devices (up to 575px) */
+@media (max-width: 575px) {
+    h1 {
+        font-size: 32px;
+    }
+    
+    body {
+        width: 100%;
+    }
+    
+    nav {
+        gap: 8px;
+        height: 180px;
+        position: absolute;
+        padding-bottom: -100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    nav .logo img {
+        height: 70px;
+    }
+    
+    #nextPageLinkDiv {
+        position: relative;
+        right: -85%;
+        top: -200px;
+        height: 55px;
+        width: 55px;
+        margin-top: 8px;
+    }
+    
+    #nextPageLink {
+        font-size: 12px;
+        left: 5px;
+        top: 20px;
+    }
+    
+    .landingPageHeading {
+        margin-left: 5%;
+        margin-top: 55%;
+    }
+    
+    .landingPageHeading h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-top: -50px;
+    }
+    
+    .landingPageHeading p {
+        font-size: 12px;
+        max-width: 250px;
+    }
+
+    
+    .landingPageImg1 img {
+        height: 220px;
+        width: 220px;
+        border: 3px solid white;
+        margin-left: -50px;
+    }
+    
+    .landingPageImg2 img {
+        height: 280px;
+        width: 280px;
+        margin-bottom: 100px;
+        border: 6px solid white;
+    }
+    
+    .sectionHeader h1 {
+        margin-bottom: -140px !important;
+    }
+    
+    .predstavitev .sectionHeader img {
+        width: 300px;
+        margin-bottom: 150px;
+    }
+    
+    .paragraphImg {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    
+    .paragraphImg p {
+        font-size: 16px;
+        max-width: 95%;
+        padding: 0 10px;
+        line-height: 1.6;
+    }
+    
+    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #img1, #img2, #img3 {
+        height: 220px;
+        width: 90%;
+        max-width: 300px;
+        object-fit: cover;
+        margin: 0;
+    }
+    
+    #dashedLine1, #dashedLine2, #dashedLine3 {
+        display: none;
+    }
+    
+    #specialTxt1 {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 15px;
+        line-height: 1.4;
+    }
+    
+    #specialTxt2 {
+        max-width: 95%;
+        font-size: 13px;
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+    
+    #txtExtra {
+        display: block;
+    }
+    
+    .ponudba {
+        margin-top: 30px;
+    }
+    
+    .ponudba h1 {
+        margin-bottom: -120px;
+    }
+
+    .ponudba .sectionHeader img {
+        height: 250px;
+        width: 250px;
+        margin-top: 20px;
+        margin-bottom: 150px;
+    }
+    
+    .cardsTop, .cardsBottom {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        margin-top: 3%;
+    }
+    
+    .card {
+        width: 85%;
+        max-width: 300px;
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .card p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .card button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .cardTop {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cardTop button {
+        margin-right: 0;
+    }
+    
+    .cardBottom button {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .kontakt {
+        margin-top: 450px;
+    }
+
+    .kontakt .sectionHeader h1 {
+        margin-top: -500px;
+    }
+    
+    .kontakt .sectionHeader img {
+        height: 250px;
+        margin-top: 20px;
+        margin-bottom: -50px;
+    }
+    
+    .kontakt h2 {
+        font-size: 24px;
+    }
+    
+    .kontakt p, .kontakt a {
+        font-size: 16px;
+    }
+    
+    .kontaktniPodatki {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 10px;
+    }
+    
+    .contactCard {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    iframe {
+        width: 90%;
+        height: 300px;
+    }
+    
+    .footerImgs {
+        visibility: hidden;
+    }
+    
+    .footerImgs img {
+        height: 0px;
+        width: 0px;
+        margin: 0 !important;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 15px;
+    }
+    
+    footer h1 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    footer p, footer a {
+        font-size: 14px;
+    }
+    
+    footer .logo img {
+        height: 80px;
+    }
+    
+    .logoSocialMedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logoSocialMedia .logo {
+        margin-left: 0;
+    }
+    
+    .socialMedia {
+        gap: 30px;
+    }
+    
+    .socialMedia img {
+        height: 25px;
+    }
+}

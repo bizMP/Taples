@@ -4,546 +4,618 @@
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-style: normal;
+    font-style: normal;;
 }
 
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
     background-color: #1E1E1E;
     background-image: url("Taples slike/background.png");
     background-repeat: repeat-y;
     background-size: 100%;
     background-position: top left;
-    overflow-x: hidden;
-}
-
-h1 {
-    font-size: 64px;
-    color: #CBA848;
 }
 
 .sectionHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin-bottom: -140px;
+}
+
+.sectionHeader h1 {
+    color:#CBA848;
+    font-weight: 25px;
+}
+
+.sectionHeader img {
+    height: 300px;
+    width: 300px;
+    margin-top: -165px;
 }
 
 .highlight {
     color: #EEBA2B;
 }
 
-/*==NAVIGATION==*/
+/*==NAVBAR==*/
 
-nav {
-    background-color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 75px;
-    width: 100%;
+.navbar {
     position: fixed;
-    z-index: 100;
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-nav img {
-    height: 100px;
+.nav-container {
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav a {
+/*==Hamburger Menu Button==*/
+
+.menu-toggle {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    z-index: 1001;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #848484;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/*==Hamburger Animation==*/
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/*==Mobile Menu==*/
+
+.nav-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu.active {
+    max-height: calc(100vh - 75px);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 2rem 1.5rem;
+}
+
+.nav-menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for menu items */
+.nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+.nav-menu.active li:nth-child(2) { transition-delay: 0.15s; }
+.nav-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+.nav-menu.active li:nth-child(4) { transition-delay: 0.25s; }
+.nav-menu.active li:nth-child(5) { transition-delay: 0.3s; }
+
+.nav-menu a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.125rem;
     color: #848484;
     text-decoration: none;
+    border-bottom: 1px solid #848484;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-#nextPageLinkDiv {
-    background-color: #3AAFD6;
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
-    padding: 10px;
+.nav-menu li:last-child a {
+    border-bottom: none;
+}
+
+.nav-menu a::before {
+    content: '';
     position: absolute;
-    right: -30px;
-    top: -30px;
-    transition: transform 0.3s ease;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background: #EEBA2B;
+    transition: width 0.3s ease;
 }
 
-#nextPageLink {
-    color: white;
-    font-size: 10px;
-    position: relative;
-    left: 3px;
-    top: 22px;
+.nav-menu a:hover,
+.nav-menu a:active {
+    color: #EEBA2B;
+    padding-left: 1rem;
+}
+
+.nav-menu a:hover::before {
+    width: 40px;
+}
+
+nav a, #navContact a {
+    color: #848484;
+    text-decoration: none;
+}
+
+#navContact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    margin: 0;
 }
 
 /*==LANDING PAGE==*/
 
-.landingPage {
-    overflow: hidden;
-    height: fit-content;
+#landingPage {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20%;
+    overflow-x: hidden;
 }
 
-.landingPageHeading {
-    margin-left: 15%;
-    margin-top: 10%;
+#landingPageTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin-left: 5%;
 }
 
-.sectionHeader {
-    margin-bottom: -250px;
-}
-
-.landingPageHeading h1 {
+#landingPageHeader h1 {
+    font-size: 25px;
+    color: #CBA848;
     margin-bottom: -10px;
 }
 
-.landingPageHeading p {
+#landingPageHeader p {
     color: red;
     font-family: "Satisfy", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;
+    font-size: 13px;
 }
 
-.landingPageImages {
-    display: flex;
-    justify-content: space-between;
-    filter: grayscale(100%);
-}
-
-.landingPageImg1 img {
-    height: 500px;
-    width: 500px;
-    border: 5px solid white;
+#landingPage #img1 {
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    margin-left: -20%;
+    margin-top: -10%;
+    border: 5px solid white;
+}
+
+#landingPage #img2 {
+    height: 200px;
+    width: 200px;
+    margin-left: -10%;
+    margin-top: -20%;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+#landingPageList h1 {
+    color: #CBA848;
+    font-size: 25px;
+    margin-left: 40%;
+    margin-top: -10%;
+}
+
+#landingPage ul {
+    max-width: 300px;
+    margin-left: 10%;
     margin-top: 5%;
 }
 
-.landingPageImg2 img {
-    height: 800px;
-    width: 800px;
-    border: 10px solid white;
-    border-radius: 50%;
-    margin-left: 15%;
-    margin-top: -70%;
+#landingPageList ul li {
+    color: white;
+    font-size: 13px;
+}
+
+/*==FOOTER IMAGES==*/
+
+#footerImgs {
+    display: none;
+}
+
+/*==FOOTER==*/
+
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+footer h1 {
+    color: white;
+    font-size: 20px;
+}
+
+footer p {
+    color: #848484;
+    font-size: 15px;
+}
+
+footer a {
+    color: #848484;
+    text-decoration: none;
+}
+
+#logoSocialMedia {
+    display: flex;
+    flex-direction: column;
+}
+
+#socialMedia {
+    display: flex;
+    gap: 30px;
+}
+
+#socialMedia img {
+    height: 25px;
+    width: 25px;
+}
+
+#contactInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 /*==PREDSTAVITEV==*/
 
-.predstavitev .sectionHeader h1{
-    margin-bottom: -280px;
+#predstavitev {
+    padding-top: 20%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-.predstavitev .sectionHeader img {
-    width: 600px;
-}
-
-.predstavitev #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
-    max-width: 500px;
+#predstavitev p {
     color: white;
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.predstavitev img {
-    border-radius: 20px;
-}
-
-.predstavitevContent {
+.paragraphImg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.paragraphImg {
-    display: flex;
-    margin-bottom: 100px;
-    gap: 300px;
+.paragraphImg img {
+    height: 250px;
+    width: auto;
+    max-width: 90%;
+    border-radius: 20px;
 }
 
-.paragraphImg p {
-    font-size: 25px;
-    text-align:  center;
+.dashedLine {
+    display: none;
 }
 
-#paragraph1 {
-    margin-top: 150px;
-}
-
-#paragraph2 {
-    margin-top: 150px;
-}
-
-#paragraph3 {
-    margin-top: 100px;
-}
-
-#paragraph4 {
-    margin-left: 700px;
-}
-
-#img1 {
-    height: 400px;
-    margin-top: 50px;
-    box-shadow: 0px 2px 10px 0px white;
-}
-
-#img2 {
-    height: 500px;
-    box-shadow: 0px 2px 10px 0px white;
-    margin-top: 150px;
-    margin-bottom: -50px;
-}
-
-#img3 {
-    height: 400px;
-    box-shadow: 0px 2px 10px 0px white;
-}
-
-#dashedLine1 {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -300px;
-    margin-left: -460px;
-    margin-bottom: -300px;
-    transform: rotate(25deg);
-    height: 500px;
-}
-
-#dashedLine2 {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -300px;
-    margin-left: -50px;
-}
-
-#dashedLine3 {
-    z-index: 99;
-    margin: -200px;
-    margin-left: -600px;
-    margin-top: -150px;
-    transform: rotate(80deg);
-}
-
-#specialTxt1 {
-    color: red;
-    font-size: 30px;
-    margin-bottom: -5px;
+#specialTxt {
+    color: red !important;
     font-family: "Satisfy", cursive;
     font-weight: 400;
     font-style: normal;
 }
 
-#specialTxt2 {
-    text-align: center;
-    max-width: 60%;
-}
-
 /*==PONUDBA==*/
 
-.ponudba {
-    margin-top: 50px;
-}
-
-.ponudba h1 {
-    margin-bottom: -220px;
-}
-
-.ponudba .sectionHeader img {
-    height: 450px;
-    width: 450px;
-    margin-bottom: 100px;
-}
-
-.cardsTop {
+#ponudba {
+    width: 100%;
+    padding-top: 20%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
 }
-
-.cardsBottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    margin-top: 5%;
-    margin-bottom: 2%;
-}
-
-/*==PONUDBA CARDS==*/
 
 .card {
     background-color: white;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
     width: 300px;
-    height: 250px;
-    padding: 10px;
-    box-shadow: 0px 2px 10px 0px white;
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.card p {
+    color: #EEBA2B;
+    font-size: 30px;
+    margin-bottom: 20%;
+}
+
+.card .cardImg {
+    height: 60px;
+    width: 60px;
+    background-color: #EEBA2B;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    height: 40px;
+    width: 40px;
+    background-color: #EEBA2B;
 }
 
 .card button {
     background-color: #EEBA2B;
     color: white;
     border: none;
+    padding: 5%;
     border-radius: 100px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: transform 0.3s ease;
-}
-
-.slikaPonudbe {
-    background-color: #EEBA2B;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    padding: 10px;
-}
-
-.card img {
-    height: 50px;
-}
-
-.card p {
-    font-size: 25px;
-    color: #EEBA2B;
-}
-
-.cardTop img {
-    margin-right: 30%;
-}
-
-.cardTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cardTop button  {
-    max-height: 40px;
-    margin-right: 20px;
 }
 
 .cardBottom button {
     width: 90%;
-    margin-left: 15px;
+    margin-top: -10%;
+}
+
+.cardTop, .cardBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardTop {
+    margin: 5%;
+}
+
+.cardBottom {
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+#specialCard1 p {
+    font-size: 26px;
+}
+
+#specialCard2 p {
+    font-size: 25px;
 }
 
 /*==KONTAKT==*/
 
-.kontakt {
-    margin-top: 50px;
-}
-
-.kontakt .sectionHeader img {
-    height: 400px;
-    margin-top: -240px;
-    margin-bottom: 100px;
-}
-
-.kontakt h2 {
-    color: white;
-}
-
-.kontakt p {
-    font-size: 20px;
-    color: #EEBA2B;
-}
-
-.kontakt h2 {
-    font-size: 30px;
-}
-
-.kontaktniPodatki {
+#kontakt {
+    width: 100%;
+    padding-top: 20%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
 }
 
-.contactCard {
-    background-color: white;
-    box-shadow: 0px 2px 10px 0px white;
-    border-radius: 20px;
-    padding: 20px;
-    width: 500px;
+.required {
+    color: red;
 }
 
-.contactCard p {
-    color:#EEBA2B;
+#contactHeader {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
 }
 
-.contactCard a {
-    color: #EEBA2B;
-    font-size: 20px;
-    text-decoration: none;
-    position: relative;
+#contactHeader h1 {
+    color: #CBA848;
 }
 
-iframe {
-    box-shadow: 0px 2px 10px 0px white;
-    border-radius: 20px;
+#contactHeader p {
+    color: #848484;
 }
 
-/*==FOOTER IMAGES==*/
-
-.footerImgs {
+form {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 100px;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    align-items: left;
+}
+
+label {
+    color: #848484;
+    padding-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-left: 10px;
+    background-color: #848484;
+    transition: background-color 0.3s ease-out;
+}
+
+input {
+    border-radius: 10px;
+}
+
+textarea {
+    height: 150px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+form button {
+    background-color: #EEBA2B;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 10px;
+    font-size: 15px;
+    width: 20%;
+    min-width: 150px;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #EEBA2B;
+    outline-offset: 2px;
+    background-color: white;
+}
+
+/*==GALERIJA==*/
+
+#galerija #top {
+    margin-bottom: -100px;
+    margin-top: 0px;
+    height: auto;
+    width: 300px;
+}
+
+#galerija #bottom {
+    margin-top: -100px;
+    margin-bottom: -80px;
+    height: auto;
+    width: 300px;
+}
+
+#galerija {
     width: 100%;
 }
 
-.footerImgs img {
+#galerija .img {
+    width: 400px;
     height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    filter: grayscale(100%);
-}
-
-#footerimg2, #footerimg3, #footerimg4, #footerimg5, #footerimg6 {
-    margin-left: -100px;
-    margin-bottom: -200px;
-}
-
-#footerimg1 {
-    z-index: -5;
-    margin-bottom: -100px;
-    margin-left: -50px;
-}
-
-#footerimg2 {
-    z-index: -4;
-    margin-bottom: -250px;
-}
-
-#footerimg3 {
-    z-index: -3;
-    margin-bottom: -150px;
-}
-
-#footerimg4 {
-    z-index: -2;
-    margin-bottom: -250px;
-}
-
-#footerimg5 {
-    z-index: -1;
-    margin-bottom: -100px;
-}
-
-#footerimg6 {
-    z-index: -1;
-    margin-bottom: -200px;
-}
-
-/*==FOOTER==*/
-
-footer {
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    padding: 40px;
-    padding-top: 20px;
-    margin-top: 40px;
-    z-index: 0;
-}
-
-footer a, p {
-    color: #848484;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-footer p {
-    color: #848484;
-    margin-bottom: -10px;
-}
-
-footer h1 {
-    color: white;
     border-radius: 20px;
-    font-size: 20px;
-    padding: 10px;
-    margin-bottom: -10px;
+    background-color: white;
+    margin: 25px;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 10px 0px white;
+    max-width: 100%;
 }
 
-.vizitka, .sedežPodjetja, .delovniČas, .contactInfo {
+#galerija p {
+    color: white;
+    text-align: center;
+    max-width: 90%;
+    font-size: 15px;
+}
+
+#galerija h1 {
+    color: #CBA848;
+    font-size: 32px;
+    text-align: center;
+    max-width: 90%;
+}
+
+/*==SEDEŽNE GARNITURE==*/
+
+.sedežneGarniture {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.contactInfo h1 {
-    margin-bottom: 5px;
-}
+/*==STOLI...==*/
 
-.vizitka {
-    margin-top: 10px;
-}
-
-.sedežPodjetja {
-    margin-bottom: 10px;
-}
-
-.delovniČas {
-    margin-bottom: 40px;
-}
-
-.contactInfo {
-    margin-top: 10px;
-}
-
-footer .logo img {
-    height: 100px;
-}
-
-.logoSocialMedia .logo {
-    margin-left: 10px;
-}
-
-.socialMedia {
+.klopiSeparejiStoliFotelji {
     display: flex;
-    gap: 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.socialMedia img {
-    height: 30px;
+/*==STILNO OBLAZINJENO POHIŠTVO==*/
+
+.stilnoOblazinjenoPohištvo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==POSTELJE...==*/
+
+.posteljeSteneVrataNiše {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==DARILNI KOTIČEK==*/
+
+.darilniKotiček {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==AVTOTAPETNIŠTVO...==*/
+
+.avtotapetništvo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /*==ANIMATIONS==*/
 
 html {
     scroll-behavior: smooth;
-}
-
-nav a:hover, footer a:hover {
-    color: white;
-    transform: scale(1.1);
-}
-
-#nextPageLinkDiv:hover {
-    transform: scale(1.3);
-}
-
-nav a::after, .quickLinks a::after, .contactInfo a::after, .contactCard a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after, .contactCard a:hover::after {
-    transform: scaleX(1);   
 }
 
 .card button:hover {
@@ -604,373 +676,868 @@ img:hover {
     transform: scale(1.05);
 }
 
-/*==RESPONSIVE MEDIA QUERIES==*/
+/*==SCREEN SIZES==*/
 
-/* Extra Large Desktops (1920px and above) */
-@media screen and (min-width: 1920px) {
-    .landingPageHeading h1 {
-        font-size: 80px;
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    #landingPage #img1 {
+        height: 500px;
+        width: 500px;
+        margin-right: -20%;
+        margin-top: -20%;
+    } 
+
+    #landingPage #img2 {
+        height: 300px;
+        width: 300px;
+        margin-top: -10%;
+    } 
+
+    #landingPage h1 {
+        font-size: 48px;
+        margin-top: 0%;
     }
-    
-    .landingPageImg1 img {
+
+    #landingPage p {
+        font-size: 20px;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+    }
+
+    #landingPageList ul {
+        margin-left: 32%;
+        margin-top: -2%;
+    }
+
+    #landingPageList ul li {
+        font-size: 20px;
+        margin-right: 0;
+        width: 460px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    footer p, footer a  {
+        font-size: 10px;
+    }
+
+    footer h1 {
+        font-size: 15px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
+        margin-left: 0;
+    }
+
+    #footerImgs img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        margin-left: -25px;
+        margin-bottom: -40px;
+        margin-top: 20px;
+        z-index: -1;
+    }
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    #socialMedia img {
+        height: 20px;
+        width: 20px;
+        margin-top: -10px;
+    }
+
+    .sectionHeader {
+        margin-top: -10%;
+        font-size: 32px;
+    }
+
+    .sectionHeader img {
         height: 600px;
         width: 600px;
-    }
-    
-    .landingPageImg2 img {
-        height: 950px;
-        width: 950px;
-    }
-    
-    .paragraphImg {
-        gap: 400px;
+        margin-top: -43%;
+        margin-bottom: -20%;
     }
 
-    .footerImgs img {
+    #specialTxt {
+        font-size: 20px;
+    }
+
+    #ponudba .sectionHeader img {
         height: 400px;
         width: 400px;
+        margin-top: -60%;
+        margin-bottom: 0%;
+    }
+
+    #kontakt h1 {
+        margin-top: -5%;
     }
 }
 
-/* Large Desktops (1440px - 1919px) */
-@media screen and (max-width: 1919px) and (min-width: 1440px) {
-    .landingPageHeading h1 {
-        font-size: 70px;
-    }
-    
-    .landingPageImg2 img {
-        height: 750px;
-        width: 750px;
-    }
-}
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+    #landingPage #img1 {
+        height: 600px;
+        width: 600px;
+        margin-right: -15%;
+        margin-top: -25%;
+    } 
 
-/* Small Desktops & Laptops (992px - 1199px) */
-@media screen and (max-width: 1199px) and (min-width: 992px) {
-    h1 {
-        font-size: 56px;
+    #landingPage #img2 {
+        height: 400px;
+        width: 400px;
+        margin-top: -5%;
+    } 
+
+    #landingPage h1 {
+        font-size: 64px;
+        margin-top: -10%;
+        margin-left: 5%;
     }
 
-    body {
+    #landingPage p {
+        font-size: 20px;
+        margin-left: 5%;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -30%;
+        font-size: 60px;
+    }
+
+    #landingPageList ul {
+        margin-left: 34%;
+        margin-top: -2%;
+    }
+
+    #landingPageList ul li {
+        font-size: 25px;
+        margin-right: 0;
+        width: 600px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
+        margin-left: 0;
+    }
+
+    #footerImgs img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin-left: -50px;
+        margin-bottom: -60px;
+        margin-top: 20px;
+        z-index: -1;
+    }
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    #logoSocialMedia .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #logoSocialMedia #socialMedia {
+        margin-left: 10px;
+    }
+
+    .sectionHeader {
+        margin-top: -10%;
+        font-size: 32px;
+    }
+
+    .sectionHeader img {
+        height: 600px;
+        width: 600px;
+        margin-top: -35%;
+        margin-bottom: -10%;
+    }
+
+    #specialTxt {
+        font-size: 20px;
+    }
+
+    #ponudba .sectionHeader img {
+        height: 400px;
+        width: 400px;
+        margin-top: -60%;
+        margin-bottom: 0%;
+    }
+
+    #ponudba .threeCards {
+        display: flex;
+        justify-content: space-around;
         width: 100%;
     }
 
-    .landingPage {
-        width: 130%;
+    #kontakt h1 {
+        margin-top: -5%;
     }
-    
-    .landingPageHeading {
-        margin-left: 20%;
+
+    .dashedLine {
+        display: flex;
     }
-    
-    .landingPageHeading h1 {
-        font-size: 52px;
+
+    #predstavitev .sectionHeader img {
+        margin-top: -32%;
     }
-    
-    .landingPageImg1 img {
+
+    #predstavitev #img2 {
         height: 400px;
-        width: 400px;
+        width: auto;
     }
-    
-    .landingPageImg2 img {
-        height: 600px;
-        width: 600px;
-        margin-top: -60%;
+
+    #predstavitev p {
+        font-size: 20px;
+        max-width: 400px;
+    }
+
+    .paragraphImg {
+        flex-direction: row;
+    }
+
+    #dashedLine1 {
+        margin-top: -100px;
+        margin-left: 280px;
+        margin-bottom: -20%;
+        transform: rotate(30deg);
+        height: 340px;
+        width: 340px;
+    }
+
+    .paragraphImg #img2 {
+        margin-left: -120%;
+        margin-top: 10%;
+    }
+
+    .paragraphImg #paragraph2 {
+        margin-right: 30%;
+        margin-left: -10%;
+        margin-top: -10%;
+    }
+
+    #dashedLine2 {
+        margin-left: 40%;
+        margin-top: -20%;
+        height: 370px;
+        width: 370px;
+    }
+
+    .paragraphImg #img3 {
+        margin-left: 5%;
+        margin-top: -10%;
+        height: 300px;
+        width: auto;
+    }
+
+    #dashedLine3 {
+        transform: rotate(70deg);
         margin-left: 20%;
+        margin-top: -7%;
+        height: 350px;
+        width: 350px;
     }
 
-    .predstavitev {
-        margin-left: 30%;
+    .paragraphImg #paragraph4 {
+        margin-left: 50%;
+        margin-top: -30%;
     }
 
-    .predstavitev p {
+    #predstavitev #specialTxt, #predstavitev #specialTxt2 {
+        max-width: 90%;
+        width: 90%;
+        font-size: 25px;
+    }
+
+    #predstavitev #specialTxt2 {
+        font-size: 20px;
+    }
+
+    #galerija p {
+        color: white;
+        text-align: center;
+        max-width: 50%;
+        font-size: 20px;
+    }
+
+    #galerija h1 {
+        color: #CBA848;
+        font-size: 48px;
+        text-align: center;
+        max-width: 1000px;
+    }
+
+    #galerija #top {
+        margin-bottom: -200px;
+        margin-top: -100px;
+        height: auto;
         width: 500px;
     }
 
-    .cardsTop, .cardsBottom {
-        gap: 60px;
-    }
-    
-    .contactCard {
-        width: 400px;
+    #galerija #bottom {
+        margin-top: -200px;
+        margin-bottom: -150px;
+        height: auto;
+        width: 500px;
     }
 
-    footer {
-        width: 120%;
-    }
-    
-    iframe {
-        width: 600px;
-        height: 400px;
+    #galerija .img {
+        width: 500px;
+        height: 300px;
+        border-radius: 20px;
+        background-color: white;
+        margin: 25px;
+        margin-bottom: 50px;
+        box-shadow: 0px 2px 10px 0px white;
     }
 }
 
+@media screen and (min-width: 1026px) and (max-width: 1550px) {
+    #landingPage #img1 {
+        height: 800px;
+        width: 800px;
+        margin-right: -10%;
+        margin-top: -25%;
+    } 
 
-/* Mobile Devices (up to 575px) */
-@media (max-width: 575px) {
-    h1 {
+    #landingPage #img2 {
+        height: 600px;
+        width: 600px;
+        margin-top: -15%;
+    } 
+
+    #landingPage h1 {
+        font-size: 80px;
+        margin-top: -30%;
+        margin-left: 15%;
+    }
+
+    #landingPage p {
+        font-size: 25px;
+        margin-left: 15%;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+        font-size: 64px;
+    }
+
+    #landingPageList ul {
+        margin-left: 34%;
+        margin-top: -2%;
+    }
+
+    #landingPageList ul li {
+        font-size: 25px;
+        margin-right: 0;
+        width: 1000px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
+        margin-left: 0;
+    }
+
+    #footerImgs img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        margin-left: -55px;
+        margin-bottom: -90px;
+        margin-top: 100px;
+        z-index: -1;
+    }
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    #logoSocialMedia .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #logoSocialMedia #socialMedia {
+        margin-left: 10px;
+    }
+
+    .sectionHeader {
+        margin-top: -10%;
         font-size: 32px;
     }
-    
-    body {
-        width: 100%;
-    }
-    
-    nav {
-        gap: 8px;
-        flex-direction: column;
-        height: 200px;
-        position: absolute;
-        padding-bottom: -100px;
-    }
-    
-    nav a {
-        font-size: 12px;
-    }
-    
-    nav .logo img {
-        height: 70px;
-    }
-    
-    #nextPageLinkDiv {
-        position: relative;
-        right: -45%;
-        top: -200px;
-        height: 55px;
-        width: 55px;
-        margin-top: 8px;
-    }
-    
-    #nextPageLink {
-        font-size: 8px;
-        left: 1px;
-        top: 5px;
-    }
-    
-    .landingPageHeading {
-        margin-left: 5%;
-        margin-top: 55%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 28px;
-        line-height: 1.2;
-    }
-    
-    .landingPageHeading p {
-        font-size: 12px;
+
+    .sectionHeader img {
+        height: 600px;
+        width: 600px;
+        margin-top: -35%;
+        margin-bottom: -10%;
     }
 
-    
-    .landingPageImg1 img {
-        height: 220px;
-        width: 220px;
-        border: 3px solid white;
-        margin-left: -50px;
-    }
-    
-    .landingPageImg2 img {
-        height: 280px;
-        width: 280px;
-        margin-bottom: 100px;
-        border: 6px solid white;
-    }
-    
-    .sectionHeader h1 {
-        margin-bottom: -140px !important;
-    }
-    
-    .predstavitev .sectionHeader img {
-        width: 300px;
-        margin-bottom: 150px;
-    }
-    
-    .paragraphImg {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-    
-    .paragraphImg p {
-        font-size: 16px;
-        max-width: 95%;
-        padding: 0 10px;
-        line-height: 1.6;
-    }
-    
-    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
-        margin-top: 0;
-        margin-left: 0;
-    }
-    
-    #img1, #img2, #img3 {
-        height: 220px;
-        width: 90%;
-        max-width: 300px;
-        object-fit: cover;
-        margin: 0;
-    }
-    
-    #dashedLine1, #dashedLine2, #dashedLine3 {
-        display: none;
-    }
-    
-    #specialTxt1 {
-        font-size: 18px;
-        text-align: center;
-        padding: 0 15px;
-        line-height: 1.4;
-    }
-    
-    #specialTxt2 {
-        max-width: 95%;
-        font-size: 13px;
-        padding: 0 10px;
-        line-height: 1.5;
-    }
-    
-    #txtExtra {
-        display: block;
-    }
-    
-    .ponudba {
-        margin-top: 30px;
-    }
-    
-    .ponudba h1 {
-        margin-bottom: -120px;
+    #specialTxt {
+        font-size: 20px;
     }
 
-    .ponudba .sectionHeader img {
-        height: 250px;
-        width: 250px;
-        margin-top: 20px;
-        margin-bottom: 150px;
-    }
-    
-    .cardsTop, .cardsBottom {
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
-        margin-top: 3%;
-    }
-    
-    .card {
-        width: 85%;
-        max-width: 300px;
-        height: auto;
-        min-height: 250px;
-    }
-    
-    .card p {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    
-    .card button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    
-    .cardTop {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .cardTop button {
-        margin-right: 0;
-    }
-    
-    .cardBottom button {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .kontakt {
-        margin-top: 450px;
+    #ponudba .sectionHeader {
+        margin-top: -10%;
     }
 
-    .kontakt .sectionHeader h1 {
-        margin-top: -500px;
+    #ponudba .sectionHeader h1 {
+        margin-top: 0%;
     }
-    
-    .kontakt .sectionHeader img {
-        height: 250px;
-        margin-top: 20px;
-        margin-bottom: -50px;
+
+    #ponudba .sectionHeader img {
+        height: 400px;
+        width: 400px;
+        margin-top: -60%;
+        margin-bottom: 0%;
     }
-    
-    .kontakt h2 {
-        font-size: 24px;
-    }
-    
-    .kontakt p, .kontakt a {
-        font-size: 16px;
-    }
-    
-    .kontaktniPodatki {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 10px;
-    }
-    
-    .contactCard {
-        width: 90%;
-        padding: 15px;
-    }
-    
-    iframe {
-        width: 90%;
-        height: 300px;
-    }
-    
-    .footerImgs {
-        visibility: hidden;
-    }
-    
-    .footerImgs img {
-        height: 0px;
-        width: 0px;
-        margin: 0 !important;
-    }
-    
-    footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 30px 15px;
-    }
-    
-    footer h1 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-    
-    footer p, footer a {
-        font-size: 14px;
-    }
-    
-    footer .logo img {
-        height: 80px;
-    }
-    
-    .logoSocialMedia {
+
+    #ponudba .threeCards {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        justify-content: space-around;
+        width: 70%;
     }
-    
-    .logoSocialMedia .logo {
+
+    #kontakt h1 {
+        margin-top: -30%;
+        font-size: 48px;
+    }
+
+    .dashedLine {
+        display: flex;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        margin-top: 0%;
+    }
+
+    #predstavitev .sectionHeader img {
+        margin-top: -22%;
+        margin-bottom: -5%;
+    }
+
+    #predstavitev #img1 {
+        height: 400px;
+        width: auto;
+        margin-left: 10%;
+    }
+
+    #predstavitev p {
+        font-size: 25px;
+        max-width: 500px;
+    }
+
+    .paragraphImg {
+        flex-direction: row;
+    }
+
+    #dashedLine1 {
+        margin-top: -180px;
+        margin-left: 330px;
+        margin-bottom: -20%;
+        transform: rotate(30deg);
+        height: 500px;
+        width: 500px;
+    }
+
+    .paragraphImg #img2 {
+        margin-left: -110%;
+        margin-top: 10%;
+        height: 500px;
+        width: auto;
+    }
+
+    .paragraphImg #paragraph2 {
+        margin-right: 30%;
+        margin-left: -20%;
+        margin-top: -5%;
+    }
+
+    #dashedLine2 {
+        margin-left: 40%;
+        margin-top: -16%;
+        height: 400px;
+        width: 400px;
+    }
+
+    .paragraphImg #img3 {
+        margin-left: 10%;
+        margin-top: -20%;
+        height: 400px;
+        width: auto;
+    }
+
+    #dashedLine3 {
+        transform: rotate(70deg);
+        margin-left: 30%;
+        margin-top: -5%;
+        height: 350px;
+        width: 350px;
+    }
+
+    .paragraphImg #paragraph3 {
+        margin-top: 0%;
+        margin-left: 5%;
+    }
+
+    .paragraphImg #paragraph4 {
+        margin-left: 45%;
+        margin-top: -20%;
+    }
+
+    #predstavitev #specialTxt, #predstavitev #specialTxt2 {
+        max-width: 90%;
+        width: 90%;
+        font-size: 25px;
+    }
+
+    #predstavitev #specialTxt2 {
+        font-size: 20px;
+    }
+	
+	#galerija p {
+		font-size: 25px;
+	}
+	
+	#galerija h1 {
+		font-size: 64px;
+	}
+	
+	#galerija #top {
+        margin-bottom: -200px;
+        margin-top: -100px;
+        height: auto;
+        width: 500px;
+    }
+
+    #galerija #bottom {
+        margin-top: -200px;
+        margin-bottom: -150px;
+        height: auto;
+        width: 500px;
+    }
+	
+	.gallery {
+		display: flex;
+	}
+
+    #galerija .img {
+        width: 500px;
+        height: 300px;
+        border-radius: 20px;
+        background-color: white;
+        margin: 25px;
+        margin-bottom: 50px;
+        box-shadow: 0px 2px 10px 0px white;
+    }
+}
+
+@media screen and (min-width: 1551px) and (max-width: 2560px) {
+    #landingPage #img1 {
+        height: 950px;
+        width: 950px;
+        margin-right: -10%;
+        margin-top: -25%;
+    } 
+
+    #landingPage #img2 {
+        height: 750px;
+        width: 750px;
+        margin-top: -15%;
+    } 
+
+    #landingPage h1 {
+        font-size: 80px;
+        margin-top: -40%;
+        margin-left: 30%;
+    }
+
+    #landingPage p {
+        font-size: 25px;
+        margin-left: 30%;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+        font-size: 80px;
+    }
+
+    #landingPageList ul {
+        margin-left: 35%;
+        margin-top: -2%;
+    }
+
+    #landingPageList ul li {
+        font-size: 25px;
+        margin-right: 0;
+        width: 1000px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
         margin-left: 0;
     }
-    
-    .socialMedia {
-        gap: 30px;
+
+    #footerImgs img {
+        height: 350px;
+        width: 350px;
+        border-radius: 50%;
+        margin-left: -38px;
+        margin-bottom: -120px;
+        margin-top: 100px;
+        z-index: -1;
     }
-    
-    .socialMedia img {
-        height: 25px;
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    #logoSocialMedia .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #logoSocialMedia #socialMedia {
+        margin-left: 10px;
+    }
+
+    .sectionHeader {
+        margin-top: -10%;
+        font-size: 32px;
+    }
+
+    .sectionHeader img {
+        height: 600px;
+        width: 600px;
+        margin-top: -25%;
+        margin-bottom: -10%;
+    }
+
+    #specialTxt {
+        font-size: 20px;
+    }
+
+    #ponudba .sectionHeader {
+        margin-top: -15%;
+    }
+
+    #ponudba .sectionHeader h1 {
+        margin-top: 0%;
+    }
+
+    #ponudba .sectionHeader img {
+        height: 400px;
+        width: 400px;
+        margin-top: -60%;
+        margin-bottom: 0%;
+    }
+
+    #ponudba .threeCards {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+
+    #kontakt h1 {
+        margin-top: -40%;
+        font-size: 48px;
+    }
+	
+	#kontakt form {
+		margin-top: -5%;
+	}
+
+    .dashedLine {
+        display: flex;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        margin-top: -12%;
+    }
+
+    #predstavitev .sectionHeader img {
+        margin-top: -17%;
+        margin-bottom: -5%;
+    }
+
+    #predstavitev #img1 {
+        height: 400px;
+        width: auto;
+        margin-left: 10%;
+		margin-bottom: 5%
+    }
+
+    #predstavitev p {
+        font-size: 25px;
+        max-width: 500px;
+    }
+
+    .paragraphImg {
+        flex-direction: row;
+    }
+
+    #dashedLine1 {
+        margin-top: -230px;
+        margin-left: 550px;
+        margin-bottom: -20%;
+        transform: rotate(30deg);
+        height: 500px;
+        width: 500px;
+    }
+
+    .paragraphImg #img2 {
+        margin-left: -100%;
+        margin-top: 10%;
+        height: 500px;
+        width: auto;
+    }
+
+    .paragraphImg #paragraph2 {
+        margin-right: 30%;
+        margin-left: -20%;
+        margin-top: -5%;
+    }
+
+    #dashedLine2 {
+        margin-left: 40%;
+        margin-top: -16%;
+        height: 400px;
+        width: 400px;
+    }
+
+    .paragraphImg #img3 {
+        margin-left: 10%;
+        margin-top: -10%;
+        height: 400px;
+        width: auto;
+    }
+
+    #dashedLine3 {
+        transform: rotate(70deg);
+        margin-left: 39%;
+        margin-top: -4%;
+        height: 350px;
+        width: 350px;
+    }
+
+    .paragraphImg #paragraph3 {
+        margin-top: 0%;
+        margin-left: 5%;
+    }
+
+    .paragraphImg #paragraph4 {
+        margin-left: 45%;
+        margin-top: -10%;
+    }
+
+    #predstavitev #specialTxt, #predstavitev #specialTxt2 {
+        max-width: 90%;
+        width: 90%;
+        font-size: 25px;
+    }
+
+    #predstavitev #specialTxt2 {
+        font-size: 20px;
+    }
+	
+	#galerija p {
+		font-size: 25px;
+	}
+	
+	#galerija h1 {
+		font-size: 64px;
+	}
+	
+	#galerija #top {
+        margin-bottom: -200px;
+        margin-top: -100px;
+        height: auto;
+        width: 500px;
+    }
+
+    #galerija #bottom {
+        margin-top: -200px;
+        margin-bottom: -150px;
+        height: auto;
+        width: 500px;
+    }
+	
+	.gallery {
+		display: flex;
+	}
+
+    #galerija .img {
+        width: 500px;
+        height: 300px;
+        border-radius: 20px;
+        background-color: white;
+        margin: 25px;
+        margin-bottom: 50px;
+        box-shadow: 0px 2px 10px 0px white;
     }
 }
