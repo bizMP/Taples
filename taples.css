@@ -191,6 +191,51 @@ nav a, #navContact a {
     margin: 0;
 }
 
+/*==DESKTOP NAVBAR==*/
+
+.desktopNavbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.desktopNavbar img {
+    height: 100px;
+    width: 100px;
+}
+
+.desktopNavbar a {
+    color: #848484;
+    text-decoration: none;
+    position: relative;
+}
+
+.desktopNavbar #nextPageLinkDiv {
+    background-color: #3AAFD6;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    transition: transform 0.3s ease;
+}
+
+.desktopNavbar #nextPageLink {
+    color: white;
+    font-size: 10px;
+    position: relative;
+    left: 3px;
+    top: 22px;
+}
+
 /*==LANDING PAGE==*/
 
 #landingPage {
@@ -239,8 +284,11 @@ nav a, #navContact a {
 }
 
 #landingPageList h1 {
-    color: #CBA848;
-    font-size: 25px;
+    background: linear-gradient(90deg, #EEBA2B, #f9d889, #EEBA2B, #f9d889);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;    font-size: 25px;
     margin-left: 40%;
     margin-top: -10%;
 }
@@ -254,6 +302,16 @@ nav a, #navContact a {
 #landingPageList ul li {
     color: white;
     font-size: 13px;
+}
+
+#landingPageList ul li:first-child {
+    color:#EEBA2B;
+    font-size: 35px;
+}
+
+#specialItem {
+    font-size: xx-large;
+    color: #EEBA2B;
 }
 
 /*==FOOTER IMAGES==*/
@@ -793,6 +851,25 @@ img:hover {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1025px) {
+    .navbar {
+        display: none;
+    }
+
+    .desktopNavbar {
+        display: flex;
+    }
+
+    .desktopNavbar #nextPageLinkDiv {
+        top: -40px;
+        right: -40px;
+    }
+
+    .desktopNavbar #nextPageLink {
+        font-size: 8px;
+        top: 30px;
+        right: 10px;
+    }
+
     #landingPage #img1 {
         height: 600px;
         width: 600px;
@@ -1028,6 +1105,14 @@ img:hover {
 }
 
 @media screen and (min-width: 1026px) and (max-width: 1550px) {
+    .navbar {
+        display: none;
+    }
+
+    .desktopNavbar {
+        display: flex;
+    }
+
     #landingPage #img1 {
         height: 800px;
         width: 800px;
@@ -1283,6 +1368,14 @@ img:hover {
 }
 
 @media screen and (min-width: 1551px) and (max-width: 2560px) {
+    .navbar {
+        display: none;
+    }
+
+    .desktopNavbar {
+        display: flex;
+    }
+
     #landingPage #img1 {
         height: 950px;
         width: 950px;
