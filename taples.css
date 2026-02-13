@@ -288,15 +288,15 @@ nav a, #navContact a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent;    font-size: 25px;
+    color: transparent;    
+    font-size: 25px;
     margin-left: 40%;
-    margin-top: -10%;
+    margin-top: -15%;
 }
 
 #landingPage ul {
     max-width: 300px;
-    margin-left: 10%;
-    margin-top: 5%;
+    margin-left: 20%;
 }
 
 #landingPageList ul li {
@@ -306,11 +306,11 @@ nav a, #navContact a {
 
 #landingPageList ul li:first-child {
     color:#EEBA2B;
-    font-size: 35px;
+    font-size: 20px;
 }
 
 #specialItem {
-    font-size: xx-large;
+    font-size: larger;
     color: #EEBA2B;
 }
 
@@ -352,12 +352,12 @@ footer a {
     flex-direction: column;
 }
 
-#socialMedia {
+.socialMedia {
     display: flex;
     gap: 30px;
 }
 
-#socialMedia img {
+.socialMedia img {
     height: 25px;
     width: 25px;
 }
@@ -571,6 +571,34 @@ input:focus, textarea:focus {
     background-color: white;
 }
 
+#kontaktniPodatki {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#kontaktniPodatki h2, p {
+    color: white;
+}
+
+#kontaktniPodatki p {
+    font-size: larger;
+}
+
+#kontaktniPodatki iframe {
+    border-radius: 20px;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.contactCard {
+    background-color: #848484;
+    padding: 10px;
+    border-radius: 20px;
+}
+
 /*==GALERIJA==*/
 
 #galerija #top {
@@ -775,6 +803,14 @@ img:hover {
         width: 460px;
     }
 
+    #landingPageList ul li:first-child {
+        font-size: 30px;
+    }
+
+    #landingPage #specialItem {
+        font-size: x-large;
+    }
+
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -816,7 +852,7 @@ img:hover {
         margin-bottom: -10px;
     }
 
-    #socialMedia img {
+    .socialMedia img {
         height: 20px;
         width: 20px;
         margin-top: -10px;
@@ -911,6 +947,10 @@ img:hover {
         width: 600px;
     }
 
+    #landingPageList ul li:first-child {
+        font-size: 35px;
+    }
+
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -949,7 +989,7 @@ img:hover {
         height: 100px;
     }
 
-    #logoSocialMedia #socialMedia {
+    #logoSocialMedia .socialMedia {
         margin-left: 10px;
     }
 
@@ -1154,6 +1194,10 @@ img:hover {
         width: 1000px;
     }
 
+    #landingPageList ul li:first-child {
+        font-size: 40px;
+    }
+
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -1192,7 +1236,7 @@ img:hover {
         height: 100px;
     }
 
-    #logoSocialMedia #socialMedia {
+    #logoSocialMedia .socialMedia {
         margin-left: 10px;
     }
 
@@ -1236,6 +1280,12 @@ img:hover {
     #kontakt h1 {
         margin-top: -30%;
         font-size: 48px;
+    }
+
+    #kontaktniPodatki {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90%;
     }
 
     .dashedLine {
@@ -1455,7 +1505,7 @@ img:hover {
         height: 100px;
     }
 
-    #logoSocialMedia #socialMedia {
+    #logoSocialMedia .socialMedia {
         margin-left: 10px;
     }
 
@@ -1504,6 +1554,12 @@ img:hover {
 	#kontakt form {
 		margin-top: -5%;
 	}
+
+    #kontaktniPodatki {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90%;
+    }
 
     .dashedLine {
         display: flex;
