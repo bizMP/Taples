@@ -579,7 +579,7 @@ input:focus, textarea:focus {
     align-items: center;
 }
 
-#kontaktniPodatki h2, p {
+#kontaktniPodatki h2, #kontaktniPodatki p {
     color: white;
 }
 
@@ -702,6 +702,12 @@ input:focus, textarea:focus {
 
 html {
     scroll-behavior: smooth;
+}
+
+.desktopNavbar a:hover, footer a:hover {
+    color: #EEBA2B;
+    opacity: 100%;
+    transform: scale(1.1);
 }
 
 .card button:hover {
@@ -1288,6 +1294,10 @@ img:hover {
         width: 90%;
     }
 
+    #kontaktniPodatki .contactCard {
+        width: 600px;
+    }
+
     .dashedLine {
         display: flex;
     }
@@ -1559,6 +1569,10 @@ img:hover {
         flex-direction: row;
         justify-content: space-around;
         width: 90%;
+    }
+
+    #kontaktniPodatki .contactCard {
+        width: 600px;
     }
 
     .dashedLine {

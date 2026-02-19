@@ -31,27 +31,186 @@ h1 {
 
 /*==NAVIGATION==*/
 
-nav {
-    background-color: white;    
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-container {
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*==Hamburger Menu Button==*/
+
+.menu-toggle {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    z-index: 1001;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #3AAFD6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/*==Hamburger Animation==*/
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/*==Mobile Menu==*/
+
+.nav-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu.active {
+    max-height: calc(100vh - 75px);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 2rem 1.5rem;
+}
+
+.nav-menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for menu items */
+.nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+.nav-menu.active li:nth-child(2) { transition-delay: 0.15s; }
+.nav-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+.nav-menu.active li:nth-child(4) { transition-delay: 0.25s; }
+.nav-menu.active li:nth-child(5) { transition-delay: 0.3s; }
+.nav-menu.active li:nth-child(6) { transition-delay: 0.35s; }
+.nav-menu.active li:nth-child(7) { transition-delay: 0.4s; }
+
+.nav-menu a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    color: #848484;
+    text-decoration: none;
+    border-bottom: 1px solid #848484;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu li:last-child a {
+    border-bottom: none;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background: #3AAFD6;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:active {
+    color: #3AAFD6;
+    padding-left: 1rem;
+}
+
+.nav-menu a:hover::before {
+    width: 40px;
+}
+
+nav a, #navContact a {
+    color: #3AAFD6;
+    text-decoration: none;
+}
+
+#navContact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    margin: 0;
+}
+
+/*==DESKTOP NAVBAR==*/
+
+.desktopNavbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 75px;
     width: 100%;
     position: fixed;
     z-index: 100;
+    display: none;
 }
 
-nav img {
+.desktopNavbar img {
     height: 100px;
+    width: 100px;
 }
 
-nav a {
-    color: #3AAFD6;
+.desktopNavbar a {
+    color: #848484;
     text-decoration: none;
     position: relative;
-    opacity: 75%;
 }
 
-#nextPageLinkDiv {
-    background-color: black;
+.desktopNavbar #nextPageLinkDiv {
+    background-color: #3AAFD6;
     border-radius: 50%;
     height: 75px;
     width: 75px;
@@ -62,556 +221,451 @@ nav a {
     transition: transform 0.3s ease;
 }
 
-#nextPageLink {
-    color: #EEBA2B;
-    font-size: 15px;
+.desktopNavbar #nextPageLink {
+    color: white;
+    font-size: 10px;
     position: relative;
     left: 3px;
     top: 22px;
 }
 
-.links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 60px;
-    margin-top: -15px;
-}
-
 /*==LANDING PAGE==*/
 
-.landingPage {
-    overflow: hidden;
-    height: fit-content;
+#landingPage {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20%;
+    overflow-x: hidden;
 }
 
-.landingPageHeading {
-    margin-left: 15%;
-    margin-top: 10%;
+#landingPageTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin-left: 5%;
 }
 
-.sectionHeader {
-    margin-bottom: -250px;
-}
-
-.landingPageHeading h1 {
+#landingPageHeader h1 {
+    font-size: 25px;
+    color: white;
     margin-bottom: -10px;
 }
 
-.landingPageHeading p {
-    color: white;
+#landingPageHeader p {
+    color: red;
     font-family: "Satisfy", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
-    max-width: 400px;
+    font-size: 13px;
+    width: 200px;
 }
 
-.landingPageImages {
-    display: flex;
-    justify-content: space-between;
-}
-
-.landingPageImg1 img {
-    height: 500px;
-    width: 500px;
+#landingPage #img1 {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-top: -20%;
+    margin-left: -10%;
     border: 5px solid white;
+}
+
+#landingPage #img2 {
+    height: 200px;
+    width: 200px;
+    margin-left: -10%;
+    margin-top: -5%;
+    margin-bottom: 5%;
     border-radius: 50%;
-    margin-left: -20%;
-    margin-top: 5%;
-}
-
-.landingPageImg2 img {
-    height: 800px;
-    width: 800px;
-    border: 10px solid white;
-    border-radius: 50%;
-    margin-left: 15%;
-    margin-top: -70%;
-}
-
-/*==PREDSTAVITEV==*/
-
-.predstavitev .sectionHeader h1{
-    margin-bottom: -300px;
-}
-
-.predstavitev .sectionHeader img {
-    width: 600px;
-}
-
-.predstavitev #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
-    max-width: 500px;
-    color: white;
-}
-
-.predstavitev img {
-    border-radius: 20px;
-}
-
-.predstavitevContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.predstavitev .paragraphImg {
-    display: flex;
-    margin-bottom: 100px;
-    gap: 300px;
-}
-
-.predstavitev .paragraphImg p {
-    font-size: 20px;
-    text-align:  center;
-}
-
-#paragraph1 {
-    margin-top: 150px;
-}
-
-#paragraph2 {
-    margin-top: 170px;
-    margin-right: 20px;
-}
-
-#paragraph3 {
-    margin-top: 100px;
-}
-
-#img1 {
-    height: 400px;
-    margin-top: 50px;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-#img2 {
-    height: 500px;
-    box-shadow: 0px 2px 10px 0px black;
-    margin-top: 150px;
-    margin-bottom: -50px;
-}
-
-#img3 {
-    height: 400px;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-#dashedLine1 {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -280px;
-    margin-left: -380px;
-    margin-bottom: -300px;
-    transform: rotate(25deg);
-    height: 550px;
-}
-
-#dashedLine2 {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -350px;
-    margin-left: -50px;
-}
-
-/*==POZITIVNI UČINKI==*/
-
-.pozitivniUčinki .sectionHeader h1{
-    margin-bottom: -350px;
-}
-
-.pozitivniUčinki .sectionHeader img {
-    width: 700px;
-}
-
-.pozitivniUčinki #paragraph1PU, #paragraph2PU, #paragraph3PU, #paragraph4PU {
-    max-width: 500px;
-    color: white;
-}
-
-.pozitivniUčinki img {
-    border-radius: 20px;
-}
-
-.pozitivniUčinkiContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.paragraphImg {
-    display: flex;
-    margin-bottom: 100px;
-    gap: 300px;
-}
-
-.paragraphImg p {
-    font-size: 20px;
-    text-align:  left;
-}
-
-.pozitivniUčinki .paragraphHeading {
-    font-size: 30px;
-}
-
-#paragraph1PU {
-    margin-top: 150px;
-    margin-left: 100px;
-}
-
-#paragraph2PU {
-    margin-top: 150px;
-}
-
-#paragraph3PU {
-    margin-top: 100px;
-}
-
-#paragraph4PU {
-    margin-left: 700px;
-    margin-top: -0px;
-}
-
-#img1PU {
-    height: 400px;
-    margin-top: 50px;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-#img2PU {
-    height: 500px;
-    box-shadow: 0px 2px 10px 0px black;
-    margin-top: 150px;
-    margin-bottom: -50px;
-}
-
-#img3PU {
-    height: 400px;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-#dashedLine1PU {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -220px;
-    margin-left: -360px;
-    margin-bottom: -300px;
-    transform: rotate(25deg);
-    height: 500px;
-}
-
-#dashedLine2PU {
-    z-index: 99;
-    margin: -200px;
-    margin-top: -310px;
-    margin-left: -50px;
-}
-
-#dashedLine3PU {
-    z-index: 99;
-    margin: -200px;
-    margin-left: -550px;
-    margin-top: -250px;
-    transform: rotate(80deg);
-}
-
-#specialTxt1 {
-    color: white;
-    font-size: 30px;
-    margin-bottom: -5px;
-    font-family: "Satisfy", cursive;
-    font-weight: 400;
-    font-style: normal;
-    width: 80%;
-    text-align: center;
-}
-
-#specialTxt2 {
-    text-align: center;
-    max-width: 60%;
-}
-
-/*==PRICELIST==*/
-
-.cenik .sectionHeader h1{
-    margin-bottom: -200px;
-}
-
-.cenik .sectionHeader img {
-    width: 400px;
-}
-
-.divForCenter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.pricelistBox {
-    margin-top: 100px;
     border: 3px solid white;
-    width: 70%;
-    border-radius: 20px;
-    background-color: white;
-    padding-bottom: 20px;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-.pricelistHeader {
-    background-color: #3AAFD6;
-    padding: 20px;
-    width: 96%;
-    border: 3px solid white;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.pricelistHeader a {
-    color: white;
-    text-decoration: none;
-}
-
-.pricelist {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    color: #3AAFD6;
-    width: 100%;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-.pricelist table {
-    border-collapse: collapse;
-}
-
-.pricelist table th, td {
-    border-right: 2px solid #3AAFD6;
-    padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-    text-align: center;
-    font-size: 25px;
-}
-
-.pricelist table th {
-    border-bottom: 2px solid #3AAFD6;
-}
-
-.lastCell {
-    border-right: none;
-}
-
-/*==AKTUALNE AKCIJE==*/
-
-.aktualneAkcije .sectionHeader h1{
-    margin-bottom: -340px;
-    margin-top: 100px;
-}
-
-.aktualneAkcije .sectionHeader img {
-    width: 700px;
-}
-
-.aktualneAkcije {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.demoDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    width: 80%;
-    border-radius: 20px;
-    color:#3AAFD6 ;
-    box-shadow: 0px 2px 10px 0px black;
-}
-
-/*==KONTAKT==*/
-
-.kontakt {
-    margin-top: 50px;
-}
-
-.kontakt .sectionHeader img {
-    height: 400px;
-    margin-top: -240px;
-    margin-bottom: 100px;
-}
-
-.kontakt h2 {
-    color: white;
-}
-
-.kontakt p {
-    font-size: 20px;
-}
-
-.kontakt h2 {
-    font-size: 30px;
-}
-
-.kontaktniPodatki {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    margin-top: -10%;
-}
-
-.contactCard {
-    background-color: white;
-    box-shadow: 0px 2px 10px 0px black;
-    border-radius: 20px;
-    padding: 10px;
-    width: 500px;
-}
-
-.contactCard p {
-    color:#3AAFD6;
-}
-
-iframe {
-    box-shadow: 0px 2px 10px 0px black;
-    border-radius: 20px;
 }
 
 /*==FOOTER IMAGES==*/
 
-.footerImgs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 100px;
-    width: 100%;
-}
-
-.footerImgs img {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-}
-
-#footerimg2, #footerimg3, #footerimg4, #footerimg5, #footerimg6 {
-    margin-left: -100px;
-    margin-bottom: -200px;
-}
-
-#footerimg1 {
-    z-index: -5;
-    margin-bottom: -100px;
-    margin-left: -50px;
-}
-
-#footerimg2 {
-    z-index: -4;
-    margin-bottom: -250px;
-}
-
-#footerimg3 {
-    z-index: -3;
-    margin-bottom: -150px;
-}
-
-#footerimg4 {
-    z-index: -2;
-    margin-bottom: -250px;
-}
-
-#footerimg5 {
-    z-index: -1;
-    margin-bottom: -100px;
-}
-
-#footerimg6 {
-    z-index: -1;
-    margin-bottom: -200px;
+#footerImgs {
+    display: none;
 }
 
 /*==FOOTER==*/
 
 footer {
-    display: flex;
-    justify-content: space-around;
     background-color: white;
-    padding: 40px;
-    padding-top: 20px;
-    margin-top: 40px;
-    z-index: 0;
-}
-
-footer a, footer p {
-    color: #3AAFD6;
-    text-decoration: none;
-    margin-bottom: 10px;
-    opacity: 75%;
-}
-
-footer p {
-    color: #3AAFD6;
-    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 footer h1 {
-    color: #3AAFD6;
-    border-radius: 20px;
+    color: black;
     font-size: 20px;
-    padding: 10px;
-    margin-bottom: -10px;
 }
 
-.vizitka, .sedežPodjetja, .delovniČas, .contactInfo {
+footer p {
+    color: #848484;
+    font-size: 15px;
+}
+
+footer a {
+    color: #848484;
+    text-decoration: none;
+}
+
+#logoSocialMedia {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contactInfo h1 {
-    margin-bottom: 5px;
-}
-
-.vizitka {
-    margin-top: 10px;
-}
-
-.sedežPodjetja {
-    margin-bottom: 10px;
-}
-
-.delovniČas {
-    margin-bottom: 40px;
-}
-
-.contactInfo {
-    margin-top: 10px;
-}
-
-footer .logo img {
-    height: 100px;
-}
-
-.logoSocialMedia .logo {
-    margin-left: 10px;
 }
 
 .socialMedia {
     display: flex;
-    gap: 60px;
+    gap: 30px;
 }
 
 .socialMedia img {
-    height: 30px;
+    height: 25px;
+    width: 25px;
+}
+
+#contactInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+/*==PREDSTAVITEV==*/
+
+#predstavitev {
+    padding-top: 20%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#predstavitev h1 {
+    font-size: 32px;
+    margin-bottom: -150px;
+}
+
+#predstavitev .sectionHeader img {
+    width: 300px;
+    margin-bottom: -100px;
+}
+
+#predstavitev p {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#predstavitev .paragraphImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#predstavitev .paragraphImg img {
+    height: auto;
+    width: 90%;
+    border-radius: 20px;
+}
+
+#predstavitev .dashedLine {
+    display: none;
+}
+
+.paragraphImg:last-of-type {
+    margin-bottom: 50px;
+}
+
+/*==POZITIVNI UČINKI==*/
+
+#pozitivniUčinki {
+    padding-top: 20%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#pozitivniUčinki .sectionHeader h1 {
+    font-size: 32px;
+    margin-bottom: -175px;
+}
+
+#pozitivniUčinki .sectionHeader img {
+    width: 350px;
+    margin-bottom: -125px;
+}
+
+#pozitivniUčinki .paragraphImg p {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.paragraphHeading {
+    font-size: x-large;
+}
+
+#pozitivniUčinki .paragraphImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pozitivniUčinki .paragraphImg img {
+    height: auto;
+    width: 90%;
+    border-radius: 20px;
+}
+
+#pozitivniUčinki .dashedLine {
+    display: none;
+}
+
+#pozitivniUčinki .paragraphImg:last-of-type {
+    margin-bottom: 50px;
+}
+
+#specialTxt1 {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#specialTxt2 {
+    color: black !important;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/*==PRICELIST==*/
+
+#cenik {
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cenik .sectionHeader h1 {
+    font-size: 32px;
+    margin-bottom: -100px;
+}
+
+#cenik .sectionHeader img {
+    width: 200px;
+    margin-bottom: -50px;
+}
+
+#pricelistBox {
+    background-color: white;
+    width: 90%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#pricelistHeader {
+    background-color: #3AAFD6;
+    width: 98%;
+    margin-top: 1%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+#pricelistHeader a {
+    color: white;
+    text-decoration: none;
+}
+
+#cenikTable th:not(:last-child), td:not(:last-child) {
+    border-right: 2px solid #3AAFD6;
+}
+
+#cenikTable th {
+    border-bottom: 2px solid #3AAFD6;
+}
+
+#cenikTable th, td {
+    padding: 10px;
+    color: #3AAFD6;
+}
+
+#cenikTable {
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*==AKTUALNE AKCIJE==*/
+
+#aktualneAkcije {
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#aktualneAkcije .sectionHeader h1 {
+    font-size: 32px;
+    margin-bottom: -175px;
+}
+
+#aktualneAkcije .sectionHeader img {
+    width: 350px;
+    margin-bottom: -125px;
+}
+
+.aktualnaAkcija {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3AAFD6;
+    background-color: white;
+    margin-bottom: 50px;
+    width: 90%;
+    border-radius: 20px;
+}
+
+/*==KONTAKT==*/
+
+#kontakt {
+    width: 100%;
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.required {
+    color: red;
+}
+
+#contactHeader {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+#contactHeader h1 {
+    color: white;
+    font-size: 32px;
+}
+
+#contactHeader p {
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    align-items: left;
+}
+
+label {
+    color: white;
+    padding-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-left: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease-out;
+}
+
+input {
+    border-radius: 10px;
+}
+
+textarea {
+    height: 150px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+form button {
+    background-color: white;
+    color: #3AAFD6;
+    border: none;
+    border-radius: 100px;
+    padding: 10px;
+    font-size: 15px;
+    width: 20%;
+    min-width: 150px;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    background-color: white;
+}
+
+#kontaktniPodatki {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#kontaktniPodatki h2, #kontaktniPodatki p {
+    color: white;
+}
+
+#kontaktniPodatki p {
+    font-size: larger;
+}
+
+#kontaktniPodatki iframe {
+    border-radius: 20px;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.contactCard {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.contactCard p {
+    color: #3AAFD6 !important;
 }
 
 /*==ANIMATIONS==*/
@@ -620,7 +674,7 @@ html {
     scroll-behavior: smooth;
 }
 
-nav a:hover, footer a:hover {
+.desktopNavbar a:hover, footer a:hover {
     color: #3AAFD6;
     opacity: 100%;
     transform: scale(1.1);
@@ -628,24 +682,6 @@ nav a:hover, footer a:hover {
 
 #nextPageLinkDiv:hover {
     transform: scale(1.3);
-}
-
-nav a::after, .quickLinks a::after, .contactInfo a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-nav a:hover::after, .quickLinks a:hover::after, .contactInfo a:hover::after {
-    transform: scaleX(1);   
 }
 
 .socialMedia a:hover {
@@ -701,381 +737,1025 @@ img:hover {
     transform: scale(1.05);
 }
 
-/*==RESPONSIVE MEDIA QUERIES==*/
+/*==SCREEN SIZES==*/
 
-/* Extra Large Desktops (1920px and above) */
-@media screen and (min-width: 1920px) {
-    .landingPageHeading h1 {
-        font-size: 80px;
-    }
-    
-    .landingPageImg1 img {
-        height: 600px;
-        width: 600px;
-    }
-    
-    .landingPageImg2 img {
-        height: 950px;
-        width: 950px;
-    }
-    
-    .paragraphImg {
-        gap: 400px;
-    }
-
-    .footerImgs img {
-        height: 400px;
-        width: 400px;
-    }
-}
-
-/* Large Desktops (1440px - 1919px) */
-@media screen and (max-width: 1919px) and (min-width: 1440px) {
-    .landingPageHeading h1 {
-        font-size: 70px;
-    }
-    
-    .landingPageImg2 img {
-        height: 750px;
-        width: 750px;
-    }
-}
-
-/* Small Desktops & Laptops (992px - 1199px) */
-@media screen and (max-width: 1199px) and (min-width: 992px) {
-    h1 {
-        font-size: 56px;
-    }
-
-    body {
-        width: 100%;
-    }
-
-    .landingPage {
-        width: 130%;
-    }
-    
-    .landingPageHeading {
-        margin-left: 20%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 52px;
-    }
-    
-    .landingPageImg1 img {
-        height: 400px;
-        width: 400px;
-    }
-    
-    .landingPageImg2 img {
-        height: 600px;
-        width: 600px;
-        margin-top: -60%;
-        margin-left: 20%;
-    }
-
-    .predstavitev {
-        margin-left: 30%;
-    }
-
-    .predstavitev p {
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    #landingPage #img1 {
+        height: 500px;
         width: 500px;
+        margin-right: -20%;
+        margin-top: -20%;
+    } 
+
+    #landingPage #img2 {
+        height: 300px;
+        width: 300px;
+        margin-top: -5%;
+    } 
+
+    #landingPage h1 {
+        font-size: 48px;
+        margin-top: 0%;
     }
 
-    .cardsTop, .cardsBottom {
-        gap: 60px;
+    #landingPage p {
+        font-size: 20px;
+        width: 300px;
     }
-    
-    .contactCard {
-        width: 400px;
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
     }
 
     footer {
-        width: 120%;
-    }
-    
-    iframe {
-        width: 600px;
-        height: 400px;
-    }
-}
-
-
-/* Mobile Devices (up to 575px) */
-@media (max-width: 575px) {
-    h1 {
-        font-size: 32px;
-    }
-    
-    body {
-        width: 100%;
-    }
-    
-    nav {
-        gap: 8px;
-        height: 180px;
-        position: absolute;
-        padding-bottom: -100px;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    nav .links {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    nav a {
-        font-size: 12px;
-    }
-    
-    nav .logo img {
-        height: 70px;
-    }
-    
-    #nextPageLinkDiv {
-        position: relative;
-        right: -85%;
-        top: -200px;
-        height: 55px;
-        width: 55px;
-        margin-top: 8px;
-    }
-    
-    #nextPageLink {
-        font-size: 12px;
-        left: 5px;
-        top: 20px;
-    }
-    
-    .landingPageHeading {
-        margin-left: 5%;
-        margin-top: 55%;
-    }
-    
-    .landingPageHeading h1 {
-        font-size: 28px;
-        line-height: 1.2;
-        margin-top: -50px;
-    }
-    
-    .landingPageHeading p {
-        font-size: 12px;
-        max-width: 250px;
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
     }
 
-    
-    .landingPageImg1 img {
-        height: 220px;
-        width: 220px;
-        border: 3px solid white;
-        margin-left: -50px;
+    footer p, footer a  {
+        font-size: 10px;
     }
-    
-    .landingPageImg2 img {
-        height: 280px;
-        width: 280px;
-        margin-bottom: 100px;
-        border: 6px solid white;
+
+    footer h1 {
+        font-size: 15px;
     }
-    
-    .sectionHeader h1 {
-        margin-bottom: -140px !important;
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
-    
-    .predstavitev .sectionHeader img {
-        width: 300px;
-        margin-bottom: 150px;
-    }
-    
-    .paragraphImg {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-    
-    .paragraphImg p {
-        font-size: 16px;
-        max-width: 95%;
-        padding: 0 10px;
-        line-height: 1.6;
-    }
-    
-    #paragraph1, #paragraph2, #paragraph3, #paragraph4 {
-        margin-top: 0;
+
+    #footerImgs img:first-child {
         margin-left: 0;
     }
-    
-    #img1, #img2, #img3 {
-        height: 220px;
-        width: 90%;
-        max-width: 300px;
-        object-fit: cover;
-        margin: 0;
-    }
-    
-    #dashedLine1, #dashedLine2, #dashedLine3 {
-        display: none;
-    }
-    
-    #specialTxt1 {
-        font-size: 18px;
-        text-align: center;
-        padding: 0 15px;
-        line-height: 1.4;
-    }
-    
-    #specialTxt2 {
-        max-width: 95%;
-        font-size: 13px;
-        padding: 0 10px;
-        line-height: 1.5;
-    }
-    
-    #txtExtra {
-        display: block;
-    }
-    
-    .ponudba {
-        margin-top: 30px;
-    }
-    
-    .ponudba h1 {
-        margin-bottom: -120px;
+
+    #footerImgs img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        margin-left: -25px;
+        margin-bottom: -40px;
+        margin-top: 20px;
+        z-index: -1;
     }
 
-    .ponudba .sectionHeader img {
-        height: 250px;
-        width: 250px;
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    .socialMedia img {
+        height: 20px;
+        width: 20px;
+        margin-top: -10px;
+    }
+
+    #predstavitev {
+        padding-top: 10%;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -275px;
+    }
+
+    #predstavitev .sectionHeader img {
+        width: 550px;
+        margin-bottom: -200px;
+    }
+
+    #predstavitev .paragraphImg p {
+        font-size: 20px;
+    }
+
+    #predstavitev .paragraphImg img {
+        width: 60%;
+    }
+
+    #pozitivniUčinki {
+        padding-top: 10%;
+    }
+
+    #pozitivniUčinki .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #pozitivniUčinki .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
+    }
+
+    #pozitivniUčinki .paragraphImg p {
+        font-size: 20px;
+    }
+
+    #pozitivniUčinki .paragraphImg img {
+        width: 60%;
+    }
+
+    #specialTxt1, #specialTxt2 {
+        font-size: 20px;
+    }
+
+    #cenik {
+        padding-top: 10%;
+    }
+
+    #cenik .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -150px;
+    }
+
+    #cenik .sectionHeader img {
+        width: 300px;
+        margin-bottom: -100px;
+    }
+
+    #pricelistHeader {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #cenikTable th, #cenikTable td {
+        font-size: 20px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
         margin-top: 20px;
-        margin-bottom: 150px;
     }
-    
-    .cardsTop, .cardsBottom {
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
-        margin-top: 3%;
-    }
-    
-    .card {
-        width: 85%;
-        max-width: 300px;
-        height: auto;
-        min-height: 250px;
-    }
-    
-    .card p {
-        font-size: 18px;
+
+    #cenikTable {
+        margin-top: 20px;
         margin-bottom: 20px;
     }
-    
-    .card button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    
-    .cardTop {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .cardTop button {
-        margin-right: 0;
-    }
-    
-    .cardBottom button {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .kontakt {
-        margin-top: 450px;
+
+    #aktualneAkcije {
+        padding-top: 10%;
     }
 
-    .kontakt .sectionHeader h1 {
-        margin-top: -500px;
+    #aktualneAkcije .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
     }
-    
-    .kontakt .sectionHeader img {
-        height: 250px;
-        margin-top: 20px;
-        margin-bottom: -50px;
+
+    #aktualneAkcije .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
     }
-    
-    .kontakt h2 {
-        font-size: 24px;
+
+    .aktualnaAkcija {
+        padding: 10px;
+        font-size: 20px;
     }
-    
-    .kontakt p, .kontakt a {
-        font-size: 16px;
+
+    #kontakt {
+        padding-top: 10%;
     }
-    
-    .kontaktniPodatki {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 10px;
-    }
-    
-    .contactCard {
+
+    #kontaktniPodatki {
         width: 90%;
-        padding: 15px;
     }
-    
-    iframe {
-        width: 90%;
-        height: 300px;
+
+    #kontaktniPodatki .contactCard {
+        width: 600px;
     }
-    
-    .footerImgs {
-        visibility: hidden;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #landingPage #img1 {
+        height: 600px;
+        width: 600px;
+        margin-right: -20%;
+        margin-top: -20%;
+    } 
+
+    #landingPage #img2 {
+        height: 400px;
+        width: 400px;
+        margin-top: -10%;
+    } 
+
+    #landingPage h1 {
+        font-size: 64px;
+        margin-top: -15%;
     }
-    
-    .footerImgs img {
-        height: 0px;
-        width: 0px;
-        margin: 0 !important;
+
+    #landingPage p {
+        font-size: 20px;
+        width: 400px;
     }
-    
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+    }
+
     footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 30px 15px;
+        flex-direction: row;
+        justify-content: space-around;
     }
-    
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    footer p, footer a  {
+        font-size: 10px;
+    }
+
     footer h1 {
-        font-size: 16px;
-        margin-bottom: 5px;
+        font-size: 15px;
     }
-    
-    footer p, footer a {
-        font-size: 14px;
-    }
-    
-    footer .logo img {
-        height: 80px;
-    }
-    
-    .logoSocialMedia {
+
+    #footerImgs {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
-    
-    .logoSocialMedia .logo {
+
+    #footerImgs img:first-child {
         margin-left: 0;
     }
-    
-    .socialMedia {
-        gap: 30px;
+
+    #footerImgs img {
+        height: 190px;
+        width: 190px;
+        border-radius: 50%;
+        margin-left: -39px;
+        margin-bottom: -60px;
+        margin-top: 20px;
+        z-index: -1;
     }
-    
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
     .socialMedia img {
-        height: 25px;
+        height: 20px;
+        width: 20px;
+        margin-top: -10px;
+    }
+
+    #predstavitev {
+        padding-top: 10%;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -275px;
+    }
+
+    #predstavitev .sectionHeader img {
+        width: 550px;
+        margin-bottom: -200px;
+    }
+
+    #predstavitev .paragraphImg p {
+        font-size: 20px;
+        max-width: 80%;
+    }
+
+    #predstavitev .paragraphImg img {
+        width: 50%;
+    }
+
+    #pozitivniUčinki {
+        padding-top: 10%;
+    }
+
+    #pozitivniUčinki .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #pozitivniUčinki .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
+    }
+
+    #pozitivniUčinki .paragraphImg p {
+        font-size: 20px;
+    }
+
+    #pozitivniUčinki .paragraphImg img {
+        width: 50%;
+    }
+
+    #specialTxt1, #specialTxt2 {
+        font-size: 20px;
+    }
+
+    #cenik {
+        padding-top: 10%;
+    }
+
+    #cenik .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -150px;
+    }
+
+    #cenik .sectionHeader img {
+        width: 300px;
+        margin-bottom: -100px;
+    }
+
+    #pricelistHeader {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #pricelistHeader a {
+        font-size: 20px;
+    }
+
+    #cenikTable th, #cenikTable td {
+        font-size: 25px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 20px;
+    }
+
+    #cenikTable {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #aktualneAkcije {
+        padding-top: 10%;
+    }
+
+    #aktualneAkcije .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #aktualneAkcije .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
+    }
+
+    .aktualnaAkcija {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    #kontakt {
+        padding-top: 10%;
+    }
+
+    #kontaktniPodatki {
+        width: 90%;
+    }
+
+    #kontaktniPodatki .contactCard {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1550px) {
+	.desktopNavbar {
+		display: flex;
+	}
+	
+	.desktopNavbar  #nextPageLinkDiv {
+		right: -40px;
+		top: -40px;
+	}
+	
+	.desktopNavbar  #nextPageLink {
+		top: 30px;
+		font-size: 12px; 
+	}
+	
+	.navbar {
+		display: none;
+	}
+	
+	#landingPage #img1 {
+        height: 700px;
+        width: 700px;
+        margin-right: -15%;
+        margin-top: -20%;
+    } 
+
+    #landingPage #img2 {
+        height: 500px;
+        width: 500px;
+        margin-top: -10%;
+    } 
+
+    #landingPage h1 {
+        font-size: 80px;
+        margin-top: -25%;
+		margin-left: 20%;
+    }
+
+    #landingPage p {
+        font-size: 25px;
+        width: 600px;
+		margin-left: 20%;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    footer p, footer a  {
+        font-size: 15px;
+    }
+
+    footer h1 {
+        font-size: 20px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
+        margin-left: 0;
+    }
+
+    #footerImgs img {
+        height: 330px;
+        width: 330px;
+        border-radius: 50%;
+        margin-left: -85px;
+        margin-bottom: -150px;
+        margin-top: 20px;
+        z-index: -1;
+    }
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    .socialMedia img {
+        height: 20px;
+        width: 20px;
+        margin-top: -10px;
+    }
+	
+	#predstavitev .dashedLine {
+		display: flex;
+	}
+
+    #predstavitev {
+        padding-top: 5%;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -275px;
+    }
+
+    #predstavitev .sectionHeader img {
+        width: 550px;
+        margin-bottom: -200px;
+    }
+	
+	#predstavitev .paragraphImg {
+		display: flex;
+		flex-direction: row;
+		gap: 100px;
+	}
+
+    #predstavitev .paragraphImg p {
+        font-size: 20px;
+        max-width: 500px;
+    }
+
+    #predstavitev .paragraphImg img {
+        width: 500px;
+    }
+	
+	#predstavitev #paragraphImg2 {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	
+	#predstavitev #paragraphImg2 img {
+		margin-top: 100px;
+	}
+	
+	#predstavitev #paragraphImg2 p {
+		margin-top: -70px;
+	}
+	
+	#predstavitev #paragraph3 {
+		margin-top: 20px;
+	}
+	
+	#predstavitev #img3 {
+		margin-top: -300px;
+	}
+	
+	#predstavitev #dashedLine1 {
+		transform: rotate(60deg);
+		margin-left: 450px;
+		margin-top: -140px;
+		margin-bottom: -250px;
+	}
+	
+	#predstavitev #dashedLine2 {
+		margin-left: 650px;
+		margin-top: -250px;
+		height: 400px;
+	}
+
+    #pozitivniUčinki {
+        padding-top: 5%;
+    }
+
+    #pozitivniUčinki .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #pozitivniUčinki .sectionHeader img {
+        width: 600px;
+        margin-bottom: -200px;
+    }
+	
+	#pozitivniUčinki .paragraphImg {
+		display: flex;
+		flex-direction: row;
+		gap: 100px;
+	}
+
+    #pozitivniUčinki .paragraphImg p {
+        font-size: 20px;
+		max-width: 500px;
+		text-align: left;
+    }
+
+    #pozitivniUčinki .paragraphImg img {
+        width: 500px;
+    }
+	
+	#pozitivniUčinki .dashedLine {
+		display: flex;
+	}
+	
+	#pozitivniUčinki #paragraphImg2 {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	
+	#pozitivniUčinki #paragraphImg2 img {
+		margin-top: 70px;
+	}
+	
+	#pozitivniUčinki #paragraphImg3 p {
+		margin-top: -400px;
+	}
+	
+	#pozitivniUčinki #paragraphImg4 p {
+		margin-left: 430px;
+		margin-top: -100px;
+	}
+	
+	#pozitivniUčinki #dashedLine1PU {
+		transform: rotate(60deg);
+		margin-left: 380px;
+		margin-top: -120px;
+		margin-bottom: -250px;
+	}
+	
+	#pozitivniUčinki #dashedLine2PU {
+		margin-left: 600px;
+		margin-top: -200px;
+	}
+	
+	#pozitivniUčinki #dashedLine3PU {
+		margin-left: 300px;
+		margin-top: -370px;
+		transform: rotate(30deg);
+	}
+
+    #specialTxt1, #specialTxt2 {
+		padding-left: 20%;
+		padding-right: 20%;
+        font-size: 20px;
+		max-width: 60%;
+    }
+
+    #cenik {
+        padding-top: 5%;
+    }
+
+    #cenik .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -150px;
+    }
+
+    #cenik .sectionHeader img {
+        width: 300px;
+        margin-bottom: -100px;
+    }
+	
+	#pricelistBox {
+		max-width: 60%;
+	}
+
+    #pricelistHeader {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #pricelistHeader a {
+        font-size: 20px;
+    }
+
+    #cenikTable th, #cenikTable td {
+        font-size: 25px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 20px;
+    }
+
+    #cenikTable {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #aktualneAkcije {
+        padding-top: 10%;
+    }
+
+    #aktualneAkcije .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #aktualneAkcije .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
+    }
+
+    .aktualnaAkcija {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    #kontakt {
+        padding-top: 5%;
+		padding-bottom: 5%;
+    }
+
+    #kontaktniPodatki {
+        width: 90%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+    }
+
+    #kontaktniPodatki .contactCard {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 1551px) and (max-width: 2560px) {
+	.desktopNavbar {
+		display: flex;
+	}
+	
+	.desktopNavbar  #nextPageLinkDiv {
+		right: -40px;
+		top: -40px;
+	}
+	
+	.desktopNavbar  #nextPageLink {
+		top: 30px;
+		font-size: 12px; 
+	}
+	
+	.navbar {
+		display: none;
+	}
+	
+	#landingPage #img1 {
+        height: 900px;
+        width: 900px;
+        margin-right: -15%;
+        margin-top: -30%;
+    } 
+
+    #landingPage #img2 {
+        height: 700px;
+        width: 700px;
+        margin-top: -10%;
+    } 
+
+    #landingPage h1 {
+        font-size: 80px;
+        margin-top: -40%;
+		margin-left: 40%;
+    }
+
+    #landingPage p {
+        font-size: 25px;
+        width: 600px;
+		margin-left: 40%;
+    }
+
+    #landingPageList h1 {
+        margin-left: 35%;
+        margin-top: -25%;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+	
+	footer .logo img {
+		height: 100px;
+		width: 100px;
+	}
+
+    footer p:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    footer p, footer a  {
+        font-size: 15px;
+    }
+
+    footer h1 {
+        font-size: 20px;
+    }
+
+    #footerImgs {
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #footerImgs img:first-child {
+        margin-left: 0;
+    }
+
+    #footerImgs img {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        margin-left: -95px;
+        margin-bottom: -150px;
+        margin-top: 20px;
+        z-index: -1;
+    }
+
+    #vizitka h1 {
+        margin-bottom: -10px;
+    }
+
+    .socialMedia img {
+        height: 20px;
+        width: 20px;
+        margin-top: -10px;
+    }
+	
+	#predstavitev .dashedLine {
+		display: flex;
+	}
+
+    #predstavitev {
+        padding-top: 5%;
+    }
+
+    #predstavitev .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -275px;
+    }
+
+    #predstavitev .sectionHeader img {
+        width: 550px;
+        margin-bottom: -200px;
+    }
+	
+	#predstavitev .paragraphImg {
+		display: flex;
+		flex-direction: row;
+		gap: 200px;
+	}
+
+    #predstavitev .paragraphImg p {
+        font-size: 20px;
+        max-width: 500px;
+    }
+
+    #predstavitev .paragraphImg img {
+        width: 500px;
+    }
+	
+	#predstavitev #paragraphImg2 {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	
+	#predstavitev #paragraphImg2 img {
+		margin-top: 100px;
+	}
+	
+	#predstavitev #paragraphImg2 p {
+		margin-top: -70px;
+	}
+	
+	#predstavitev #paragraph3 {
+		margin-top: 20px;
+	}
+	
+	#predstavitev #img3 {
+		margin-top: -300px;
+	}
+	
+	#predstavitev #dashedLine1 {
+		transform: rotate(60deg);
+		margin-left: 650px;
+		margin-top: -140px;
+		margin-bottom: -250px;
+	}
+	
+	#predstavitev #dashedLine2 {
+		margin-left: 800px;
+		margin-top: -250px;
+		height: 400px;
+	}
+
+    #pozitivniUčinki {
+        padding-top: 5%;
+    }
+
+    #pozitivniUčinki .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #pozitivniUčinki .sectionHeader img {
+        width: 600px;
+        margin-bottom: -200px;
+    }
+	
+	#pozitivniUčinki .paragraphImg {
+		display: flex;
+		flex-direction: row;
+		gap: 200px;
+	}
+
+    #pozitivniUčinki .paragraphImg p {
+        font-size: 20px;
+		max-width: 500px;
+		text-align: left;
+    }
+
+    #pozitivniUčinki .paragraphImg img {
+        width: 500px;
+    }
+	
+	#pozitivniUčinki .dashedLine {
+		display: flex;
+	}
+	
+	#pozitivniUčinki #paragraphImg2 {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	
+	#pozitivniUčinki #paragraphImg2 img {
+		margin-top: 70px;
+	}
+	
+	#pozitivniUčinki #paragraphImg3 p {
+		margin-top: -400px;
+	}
+	
+	#pozitivniUčinki #paragraphImg4 p {
+		margin-left: 430px;
+		margin-top: -100px;
+	}
+	
+	#pozitivniUčinki #dashedLine1PU {
+		transform: rotate(60deg);
+		margin-left: 600px;
+		margin-top: -120px;
+		margin-bottom: -250px;
+	}
+	
+	#pozitivniUčinki #dashedLine2PU {
+		margin-left: 750px;
+		margin-top: -175px;
+		height: 400px;
+	}
+	
+	#pozitivniUčinki #dashedLine3PU {
+		margin-left: 490px;
+		margin-top: -370px;
+		transform: rotate(30deg);
+	}
+
+    #specialTxt1, #specialTxt2 {
+		padding-left: 20%;
+		padding-right: 20%;
+        font-size: 20px;
+		max-width: 60%;
+    }
+
+    #cenik {
+        padding-top: 5%;
+    }
+
+    #cenik .sectionHeader h1 {
+        font-size: 64px;
+        margin-bottom: -150px;
+    }
+
+    #cenik .sectionHeader img {
+        width: 300px;
+        margin-bottom: -100px;
+    }
+	
+	#pricelistBox {
+		max-width: 50%;
+	}
+
+    #pricelistHeader {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #pricelistHeader a {
+        font-size: 20px;
+    }
+
+    #cenikTable th, #cenikTable td {
+        font-size: 25px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 20px;
+    }
+
+    #cenikTable {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #aktualneAkcije {
+        padding-top: 10%;
+    }
+
+    #aktualneAkcije .sectionHeader h1 {
+        font-size: 60px;
+        margin-bottom: -300px;
+    }
+
+    #aktualneAkcije .sectionHeader img {
+        width: 600px;
+        margin-bottom: -250px;
+    }
+
+    .aktualnaAkcija {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    #kontakt {
+        padding-top: 5%;
+		padding-bottom: 5%;
+    }
+
+    #kontaktniPodatki {
+        width: 90%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+    }
+
+    #kontaktniPodatki .contactCard {
+        width: 600px;
     }
 }
