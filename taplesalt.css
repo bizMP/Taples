@@ -210,7 +210,7 @@ nav a, #navContact a {
 }
 
 .desktopNavbar #nextPageLinkDiv {
-    background-color: #3AAFD6;
+    background-color: black;
     border-radius: 50%;
     height: 75px;
     width: 75px;
@@ -222,7 +222,8 @@ nav a, #navContact a {
 }
 
 .desktopNavbar #nextPageLink {
-    color: white;
+    color: #EEBA2B;
+    text-align: center;
     font-size: 10px;
     position: relative;
     left: 3px;
@@ -251,13 +252,13 @@ nav a, #navContact a {
     margin-bottom: -10px;
 }
 
-#landingPageHeader p {
+#landingPage h2 {
     color: red;
-    font-family: "Satisfy", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 13px;
+    text-align: center;
+    font-size: 15px;
     width: 200px;
+    margin-left: 200px;
+    margin-top: 25px;
 }
 
 #landingPage #img1 {
@@ -265,7 +266,7 @@ nav a, #navContact a {
     width: 300px;
     border-radius: 50%;
     margin-top: -20%;
-    margin-left: -10%;
+    margin-left: 10%;
     border: 5px solid white;
 }
 
@@ -273,7 +274,7 @@ nav a, #navContact a {
     height: 200px;
     width: 200px;
     margin-left: -10%;
-    margin-top: -5%;
+    margin-top: -50%;
     margin-bottom: 5%;
     border-radius: 50%;
     border: 3px solid white;
@@ -352,8 +353,9 @@ footer a {
 
 #predstavitev p {
     color: white;
+    text-shadow: 2px 2px 4px black;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -399,8 +401,9 @@ footer a {
 
 #pozitivniUčinki .paragraphImg p {
     color: white;
+    text-shadow: 2px 2px 4px black;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -470,6 +473,7 @@ footer a {
 #cenik .sectionHeader img {
     width: 200px;
     margin-bottom: -50px;
+    z-index: -100;
 }
 
 #pricelistBox {
@@ -498,6 +502,7 @@ footer a {
 #pricelistHeader a {
     color: white;
     text-decoration: none;
+    z-index: 100;
 }
 
 #cenikTable th:not(:last-child), td:not(:last-child) {
@@ -523,7 +528,6 @@ footer a {
 
 #aktualneAkcije {
     width: 100%;
-    overflow-x: hidden;
     padding-top: 20%;
     display: flex;
     flex-direction: column;
@@ -750,7 +754,7 @@ img:hover {
     #landingPage #img2 {
         height: 300px;
         width: 300px;
-        margin-top: -5%;
+        margin-top: -40%;
     } 
 
     #landingPage h1 {
@@ -758,9 +762,11 @@ img:hover {
         margin-top: 0%;
     }
 
-    #landingPage p {
+    #landingPage h2 {
         font-size: 20px;
-        width: 300px;
+        width: 350px;
+        margin-left: 40%;
+        margin-top: 5%;
     }
 
     #landingPageList h1 {
@@ -938,7 +944,7 @@ img:hover {
     #landingPage #img2 {
         height: 400px;
         width: 400px;
-        margin-top: -10%;
+        margin-top: -35%;
     } 
 
     #landingPage h1 {
@@ -946,9 +952,11 @@ img:hover {
         margin-top: -15%;
     }
 
-    #landingPage p {
-        font-size: 20px;
+    #landingPage h2 {
+        font-size: 25px;
         width: 400px;
+        margin-left: 40%;
+        margin-top: 5%;
     }
 
     #landingPageList h1 {
@@ -1132,7 +1140,8 @@ img:hover {
 	
 	.desktopNavbar  #nextPageLink {
 		top: 30px;
-		font-size: 12px; 
+        left: -15px;
+		font-size: 8px; 
 	}
 	
 	.navbar {
@@ -1149,7 +1158,7 @@ img:hover {
     #landingPage #img2 {
         height: 500px;
         width: 500px;
-        margin-top: -10%;
+        margin-top: -25%;
     } 
 
     #landingPage h1 {
@@ -1158,15 +1167,11 @@ img:hover {
 		margin-left: 20%;
     }
 
-    #landingPage p {
-        font-size: 25px;
+    #landingPage h2 {
+        font-size: 35px;
         width: 600px;
-		margin-left: 20%;
-    }
-
-    #landingPageList h1 {
-        margin-left: 35%;
-        margin-top: -25%;
+		margin-left: 40%;
+        margin-top: 5%;
     }
 
     footer {
@@ -1401,7 +1406,7 @@ img:hover {
     }
 
     #aktualneAkcije {
-        padding-top: 10%;
+        padding-top: 5%;
     }
 
     #aktualneAkcije .sectionHeader h1 {
