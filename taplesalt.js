@@ -39,12 +39,14 @@ function spremeniCenik(value) {
     const otroci = document.getElementById('otroci');
     const detox = document.getElementById('detox');
     const paketi = document.getElementById('paketi');
+    const txt = document.getElementById('pricelistOtrociTxt');
 
     if(value == 'odrasli') {
         odrasli.style.textDecoration = "underline";
         otroci.style.textDecoration = "none";
         detox.style.textDecoration = "none";
         paketi.style.textDecoration = "none";
+        txt.style.display = "none";
 
         table.rows[1].cells[1].textContent = "1 oseba";
         table.rows[2].cells[1].textContent = "2 osebi";
@@ -62,6 +64,7 @@ function spremeniCenik(value) {
         odrasli.style.textDecoration = "none";
         detox.style.textDecoration = "none";
         paketi.style.textDecoration = "none";
+        txt.style.display = "flex";
 
         table.rows[1].cells[1].textContent = "1 oseba";
         table.rows[2].cells[1].textContent = "2 osebi";
@@ -79,6 +82,7 @@ function spremeniCenik(value) {
         otroci.style.textDecoration = "none";
         odrasli.style.textDecoration = "none";
         paketi.style.textDecoration = "none";
+        txt.style.display = "none";
 
         table.rows[1].cells[1].textContent = "1 oseba";
         table.rows[2].cells[1].textContent = "2 osebi";
@@ -96,6 +100,7 @@ function spremeniCenik(value) {
         otroci.style.textDecoration = "none";
         detox.style.textDecoration = "none";
         odrasli.style.textDecoration = "none";
+        txt.style.display = "none";
 
         table.rows[1].cells[0].textContent = "30/50/60 minut";
 

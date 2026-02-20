@@ -253,7 +253,7 @@ nav a, #navContact a {
 }
 
 #landingPage h2 {
-    color: red;
+    color: white;
     text-align: center;
     font-size: 15px;
     width: 200px;
@@ -434,12 +434,9 @@ footer a {
 }
 
 #specialTxt1 {
-    font-family: "Satisfy", cursive;
-    font-weight: 400;
-    font-style: normal;
     color: white;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -448,7 +445,7 @@ footer a {
     color: black !important;
     margin-bottom: 50px;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -522,6 +519,16 @@ footer a {
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#pricelistText, #pricelistOtrociTxt {
+    font-size: small;
+    color:#3AAFD6;
+}
+
+#pricelistOtrociTxt {
+    display: none;
+    text-align: center;
 }
 
 /*==AKTUALNE AKCIJE==*/
@@ -836,7 +843,7 @@ img:hover {
     }
 
     #predstavitev .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #predstavitev .paragraphImg img {
@@ -858,7 +865,7 @@ img:hover {
     }
 
     #pozitivniUčinki .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #pozitivniUčinki .paragraphImg img {
@@ -866,7 +873,7 @@ img:hover {
     }
 
     #specialTxt1, #specialTxt2 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #cenik {
@@ -1026,7 +1033,7 @@ img:hover {
     }
 
     #predstavitev .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
         max-width: 80%;
     }
 
@@ -1049,7 +1056,7 @@ img:hover {
     }
 
     #pozitivniUčinki .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #pozitivniUčinki .paragraphImg img {
@@ -1057,7 +1064,7 @@ img:hover {
     }
 
     #specialTxt1, #specialTxt2 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #cenik {
@@ -1246,7 +1253,7 @@ img:hover {
 	}
 
     #predstavitev .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
         max-width: 500px;
     }
 
@@ -1264,7 +1271,7 @@ img:hover {
 	}
 	
 	#predstavitev #paragraphImg2 p {
-		margin-top: -70px;
+		margin-top: -10px;
 	}
 	
 	#predstavitev #paragraph3 {
@@ -1278,13 +1285,13 @@ img:hover {
 	#predstavitev #dashedLine1 {
 		transform: rotate(60deg);
 		margin-left: 450px;
-		margin-top: -140px;
+		margin-top: -90px;
 		margin-bottom: -250px;
 	}
 	
 	#predstavitev #dashedLine2 {
 		margin-left: 650px;
-		margin-top: -250px;
+		margin-top: -190px;
 		height: 400px;
 	}
 
@@ -1309,7 +1316,7 @@ img:hover {
 	}
 
     #pozitivniUčinki .paragraphImg p {
-        font-size: 20px;
+        font-size: 25px;
 		max-width: 500px;
 		text-align: left;
     }
@@ -1326,6 +1333,10 @@ img:hover {
 		display: flex;
 		flex-direction: row-reverse;
 	}
+
+    #pozitivniUčinki #paragraphImg2 p {
+        margin-top: 90px;
+    }
 	
 	#pozitivniUčinki #paragraphImg2 img {
 		margin-top: 70px;
@@ -1342,18 +1353,21 @@ img:hover {
 	
 	#pozitivniUčinki #dashedLine1PU {
 		transform: rotate(60deg);
-		margin-left: 380px;
-		margin-top: -120px;
+		margin-left: 450px;
+		margin-top: -90px;
 		margin-bottom: -250px;
 	}
 	
 	#pozitivniUčinki #dashedLine2PU {
-		margin-left: 600px;
-		margin-top: -200px;
+        transform: rotate(-10deg);
+        height: 400px;
+        width: 400px;
+		margin-left: 620px;
+		margin-top: -100px;
 	}
 	
 	#pozitivniUčinki #dashedLine3PU {
-		margin-left: 300px;
+		margin-left: 280px;
 		margin-top: -370px;
 		transform: rotate(30deg);
 	}
@@ -1361,7 +1375,7 @@ img:hover {
     #specialTxt1, #specialTxt2 {
 		padding-left: 20%;
 		padding-right: 20%;
-        font-size: 20px;
+        font-size: 25px;
 		max-width: 60%;
     }
 
