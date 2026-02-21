@@ -529,6 +529,9 @@ footer a {
 #pricelistOtrociTxt {
     display: none;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
 }
 
 /*==AKTUALNE AKCIJE==*/
@@ -554,13 +557,13 @@ footer a {
 
 .aktualnaAkcija {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #3AAFD6;
-    background-color: white;
+}
+
+.aktualnaAkcija img {
     margin-bottom: 50px;
-    width: 90%;
+    width: 80%;
     border-radius: 20px;
 }
 
@@ -908,6 +911,10 @@ img:hover {
         margin-bottom: 20px;
     }
 
+    #pricelistOtrociTxt {
+        font-size: large;
+    }
+
     #aktualneAkcije {
         padding-top: 10%;
     }
@@ -999,10 +1006,10 @@ img:hover {
     }
 
     #footerImgs img {
-        height: 190px;
-        width: 190px;
+        height: 210px;
+        width: 210px;
         border-radius: 50%;
-        margin-left: -39px;
+        margin-left: -45px;
         margin-bottom: -60px;
         margin-top: 20px;
         z-index: -1;
@@ -1103,6 +1110,12 @@ img:hover {
         margin-bottom: 20px;
     }
 
+    #pricelistOtrociTxt {
+        font-size: large;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     #aktualneAkcije {
         padding-top: 10%;
     }
@@ -1117,9 +1130,8 @@ img:hover {
         margin-bottom: -250px;
     }
 
-    .aktualnaAkcija {
-        padding: 10px;
-        font-size: 20px;
+    .aktualnaAkcija img {
+        width: 60%;
     }
 
     #kontakt {
@@ -1419,6 +1431,12 @@ img:hover {
         margin-bottom: 20px;
     }
 
+    #pricelistOtrociTxt {
+        font-size: large;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
     #aktualneAkcije {
         padding-top: 5%;
     }
@@ -1433,9 +1451,8 @@ img:hover {
         margin-bottom: -250px;
     }
 
-    .aktualnaAkcija {
-        padding: 10px;
-        font-size: 20px;
+    .aktualnaAkcija img {
+        width: 50%;
     }
 
     #kontakt {
@@ -1743,6 +1760,12 @@ img:hover {
         margin-bottom: 20px;
     }
 
+    #pricelistOtrociTxt {
+        font-size: x-large;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
     #aktualneAkcije {
         padding-top: 10%;
     }
@@ -1757,9 +1780,8 @@ img:hover {
         margin-bottom: -250px;
     }
 
-    .aktualnaAkcija {
-        padding: 10px;
-        font-size: 20px;
+    .aktualnaAkcija img {
+        width: 50%;
     }
 
     #kontakt {
