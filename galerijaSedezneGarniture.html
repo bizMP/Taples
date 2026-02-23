@@ -139,14 +139,14 @@
     <script src="taples.js"></script>
 
     <script>
-        fetch("https://res.cloudinary.com/taplesGallery/image/list/client-gallery.json")
+        fetch("https://res.cloudinary.com/dpm3qzeih/image/list/taplesGallery.json")
         .then(res => res.json())
         .then(data => {
             const gallery = document.getElementById("gallery");
 
             data.resources.forEach(img => {
             const image = document.createElement("img");
-            image.src = `https://res.cloudinary.com/taplesGallery/image/upload/${img.public_id}.${img.format}`;
+            image.src = `https://res.cloudinary.com/dpm3qzeih/image/upload/${img.public_id}.${img.format}`;
             gallery.appendChild(image);
             });
         });
