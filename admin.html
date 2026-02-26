@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadzorna plošča</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="card" id="card">
+        <h1>Dobrodošli <span>nazaj.</span></h1>
+        <p class="subtitle">Prosimo, prijavite se v svoj račun</p>
+
+        <form id="login">
+            <div class="field">
+                <label for="username">Uporabniško ime</label>
+                <div class="input-wrap">
+                    <input type="text" id="username" placeholder="vnesite uporabniško ime">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="password">Geslo</label>
+                <div class="input-wrap">
+                    <input type="password" id="password" placeholder="••••••••">
+                </div>
+            </div>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
+
+            <p id="loginError" class="error-msg">Napačno uporabniško ime ali geslo.</p>
+
+            <button type="button" onclick="checkCredentials()">Prijavi se</button>
+        </form>
+    </div>
+
+    <div class="card" style="display: none;" id="images">
+        <h1 style="margin-bottom: 20px;">Pozdravljen <span>David.</span></h1>
+
+        <form action="https://formspree.io/f/xnjblnlb" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label for="gallery">Izberi galerijo:</label>
+                <div class="input-wrap">
+                    <select id="gallery" name="Gallery" onchange="showImages()">
+                        <option value="">— Izberi —</option>
+                        <option value="sedezneGarniture">Sedežne garniture</option>
+                        <option value="posteljeVrataNise">Postelje, vrata, niše</option>
+                        <option value="oblazinjenoPohistvo">Oblazinjeno pohištvo</option>
+                        <option value="klopiStoliFotelji">Klopi, stoli, fotelji</option>
+                        <option value="darilniKoticek">Darilni kotiček</option>
+                        <option value="avtotapetnistvo">Avtotapetništvo</option>
+                        <option value="aktualneAkcije">Aktualne akcije</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="file-field">
+                <span class="file-label-text">Izberi slike:</span>
+                <div class="file-drop" id="fileDrop">
+                    <input id="img" type="file" name="Images">
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="#EEBA2B" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12M8 8l4-4 4 4"/>
+                    </svg>
+                    <p class="file-drop-text"><strong>Kliknite</strong> ali povlecite slike sem</p>
+                    <p class="file-names" id="fileNames"></p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <label for="selectedImages">Izbrane slike za izbris:</label>
+            <input type="text" id="selectedImages" name="Selected Images" readonly>
+
+            <div class="image-grid">
+                <img src="Taples slike/sedežna1.jpg" class="selectable imgSedezne" data-name="sedežna1.jpg">
+                <img src="Taples slike/sedežna2.jpg" class="selectable imgSedezne" data-name="sedežna2.jpg">
+                <img src="Taples slike/sedežna3.jpg" class="selectable imgSedezne" data-name="sedežna3.jpg">
+                <img src="Taples slike/sedežna4.jpg" class="selectable imgSedezne" data-name="sedežna4.jpg">
+                <img src="Taples slike/sedežna5.jpg" class="selectable imgSedezne" data-name="sedežna5.jpg">
+                <img src="Taples slike/sedežna6.jpg" class="selectable imgSedezne" data-name="sedežna6.jpg">
+            </div>
+
+            <div class="divider"></div>
+
+            <button type="submit">Pošlji</button>
+        </form>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
