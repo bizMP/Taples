@@ -1634,27 +1634,29 @@ img:hover {
 	}
 	
 	#predstavitev #paragraphImg2 p {
-		margin-top: -70px;
+		margin-top: 100px;
+		margin-bottom: 200px;
 	}
 	
 	#predstavitev #paragraph3 {
-		margin-top: 20px;
+		margin-top: -60px;
 	}
 	
 	#predstavitev #img3 {
 		margin-top: -300px;
+		width: 20%;
 	}
 	
 	#predstavitev #dashedLine1 {
 		transform: rotate(60deg);
 		margin-left: 650px;
-		margin-top: -140px;
+		margin-top: -200px;
 		margin-bottom: -250px;
 	}
 	
 	#predstavitev #dashedLine2 {
 		margin-left: 800px;
-		margin-top: -250px;
+		margin-top: -200px;
 		height: 400px;
 	}
 
@@ -1701,6 +1703,10 @@ img:hover {
 		margin-top: 70px;
 	}
 	
+	#pozitivniUčinki #paragraphImg2 p {
+		margin-top: 140px;
+	}
+	
 	#pozitivniUčinki #paragraphImg3 p {
 		margin-top: -400px;
 	}
@@ -1719,13 +1725,13 @@ img:hover {
 	
 	#pozitivniUčinki #dashedLine2PU {
 		margin-left: 750px;
-		margin-top: -175px;
+		margin-top: -50px;
 		height: 400px;
 	}
 	
 	#pozitivniUčinki #dashedLine3PU {
 		margin-left: 490px;
-		margin-top: -370px;
+		margin-top: -350px;
 		transform: rotate(30deg);
 	}
 
